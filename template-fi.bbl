@@ -1,0 +1,64 @@
+\begin{thebibliography}{1}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {Ames:2007:WWT:1240624.1240772}
+\btxnamefont {\btxlastnamefont {Ames}, Morgan} \btxandlong {}\ \btxnamefont
+  {\btxlastnamefont {Naaman}, Mor}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Why we tag: Motivations for annotation in mobile and
+  online media}{Why We Tag: Motivations for Annotation in Mobile and Online
+  Media}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the SIGCHI Conference on
+  Human Factors in Computing Systems}, CHI '07, \btxpageslong {}\ 971--980, New
+  York, NY, USA, 2007. \btxpublisherfont {ACM}\ifbtxprintISBN {,
+  \mbox{\btxISBN~\btxISBNfont {978-1-59593-593-9}}}.
+
+\bibitem {Bell:2007:LNP:1345448.1345465}
+\btxnamefont {\btxlastnamefont {Bell}, Robert\btxfnamespacelong M.} \btxandlong
+  {}\ \btxnamefont {\btxlastnamefont {Koren}, Yehuda}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Lessons from the netflix prize
+  challenge}{Lessons from the Netflix Prize Challenge}}.
+\newblock \btxjournalfont {SIGKDD Explor. Newsl.}, 9(2):75--79,
+  \btxprintmonthyear{.}{12}{2007}{long}.
+
+\bibitem {Herlocker:2000:ECF:358916.358995}
+\btxnamefont {\btxlastnamefont {Herlocker}, Jonathan\btxfnamespacelong L.},
+  \btxnamefont {\btxlastnamefont {Konstan}, Joseph\btxfnamespacelong
+  A.}\btxandcomma {} \btxandlong {}\ \btxnamefont {\btxlastnamefont {Riedl},
+  John}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Explaining
+  collaborative filtering recommendations}{Explaining Collaborative Filtering
+  Recommendations}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the 2000 ACM Conference
+  on Computer Supported Cooperative Work}, CSCW '00, \btxpageslong {}\
+  241--250, New York, NY, USA, 2000. \btxpublisherfont {ACM}.
+
+\bibitem {Ullman}
+\btxnamefont {\btxlastnamefont {Leskovec}, Jure}, \btxnamefont
+  {\btxlastnamefont {Rajaraman}, Anand}\btxandcomma {} \btxandlong {}\
+  \btxnamefont {\btxlastnamefont {Ullman}, Jeffrey\btxfnamespacelong
+  D.}\btxauthorcolon\ \btxtitlefont {Mining of Massive Datasets}.
+\newblock \btxpublisherfont {Cambridge University Press}, Cambridge, United
+  Kingdom, \btxeditionnumlong {2.}{}, 2014.
+
+\bibitem {Sigurbjornsson:2008:FTR:1367497.1367542}
+\btxnamefont {\btxlastnamefont {Sigurbj\"{o}rnsson}, B\"{o}rkur} \btxandlong
+  {}\ \btxnamefont {\btxlastnamefont {{van Zwol}}, Roelof}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Flickr tag recommendation based on
+  collective knowledge}{Flickr Tag Recommendation Based on Collective
+  Knowledge}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the 17th International
+  Conference on World Wide Web}, WWW '08, \btxpageslong {}\ 327--336, New York,
+  NY, USA, 2008. \btxpublisherfont {ACM}.
+
+\end{thebibliography}

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: template-fi.aux
+The style file: babplain-lf.bst
+Database file #1: references-fi.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty language in Ames:2007:WWT:1240624.1240772
+You've used 5 entries,
+            2783 wiz_defined-function locations,
+            672 strings with 7021 characters,
+and the built_in function-call counts, 2477 in all, are:
+= -- 243
+> -- 75
+< -- 3
++ -- 29
+- -- 24
+* -- 241
+:= -- 334
+add.period$ -- 13
+call.type$ -- 5
+change.case$ -- 27
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 134
+empty$ -- 227
+format.name$ -- 41
+if$ -- 546
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 7
+newline$ -- 36
+num.names$ -- 10
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 22
+quote$ -- 0
+skip$ -- 82
+stack$ -- 0
+substring$ -- 140
+swap$ -- 65
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 1
+while$ -- 21
+width$ -- 6
+write$ -- 76
+(There was 1 warning)
