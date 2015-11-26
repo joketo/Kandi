@@ -261,29 +261,35 @@ Artikkelin julkaisemisen jälkeen Netflixin toimintaperiaate on muuttunut elokuv
 \subsection{Uutisartikkelien suosittelu käyttäjille - skaalautuva yhteistoiminnallinen suodattaminen}
 
 \begin{figure}[]
-\includegraphics[width = 450pt]{googlenews.eps}\caption{Kuvankaappaus Google Newsistä.}
+\includegraphics[width = 390pt]{googlenews.eps}\caption{Kuvankaappaus Google Newsistä.}
 \label{googlenews}
 \end{figure} 
 
-Google News on palvelu, joka kokoaa käyttäjilleen uutisartikkeleita monelta eri uutissivustolta ja luokittelee keskenään samanlaiset artikkelit ryhmiin. Käyttäjille tarjotaan suosituksia luettavista artikkeleista heidän lukuhistoriansa perusteella. Das ym. \cite{Das:2007:GNP:1242572.1242610} esittelevät artikkelissaan yhteistoiminnalliseen suodattamiseen perustuvan ratkaisuehdotuksensa suosittelujen tarjoamiseen. Heidän päätavoitteenaan oli rakentaa skaalautuva online-suosittelujärjestelmä, jota voitaisiin käyttää suurissa palveluissa kuten Google Newsissä.
+Google News on palvelu, joka kokoaa käyttäjilleen uutisartikkeleita monelta eri uutissivustolta ja luokittelee keskenään samanlaiset artikkelit ryhmiin. Käyttäjille tarjotaan suosituksia luettavista artikkeleista heidän lukuhistoriansa perusteella. Das ym. \cite{Das:2007:GNP:1242572.1242610} esittelevät artikkelissaan yhteistoiminnalliseen suodattamiseen perustuvan ratkaisuehdotuksensa suosittelujen tarjoamiseen. Ryhmän päätavoitteenaan oli rakentaa skaalautuva online-suosittelujärjestelmä, jota voitaisiin käyttää suurissa palveluissa kuten Google Newsissä.
 
 Google News -palvelun ominaisuudet loivat joitakin haasteita järjestelmän rakentamiselle. Valtava kävijämäärä ja miljoonat uutisartikkelit asettavat vaatimuksen skaalautuvuudelle. Palvelun osiot ovat myös jatkuvassa muutoksen tilassa, kun artikkeleita poistuu ja lisätään muutaman minuutin välein. Toisin kuin monissa muissa staattisissa palveluissa, käytettävä suosittelumalli vanhenee nopeasti eikä korjaannu pienillä muutoksilla. Osioiden jatkuva muutos on merkittävin tekijä, joka erottaa rakennettavan järjestelmän muiden suurien palveluiden suosittelujärjestelmistä \cite{Das:2007:GNP:1242572.1242610}.
 
-Google News -palvelulla on käyttäjänä sekä rekisteröitymättömiä että rekisteröityneitä käyttäjiä, joista jälkimmäisille tarjotaan enemmän käytettäviä ominaisuuksia. Kuvassa \ref{googlenews} näkyy rekisteröityneen käyttäjän näkymä palvelussa. Google tallentaa rekisteröityneen käyttäjän uutisartikkeleihin liittyviä aktiviteetteja muiltakin Googlen palveluilta ja tallentaa nämä artikkelit käyttäjän lukuhistoriaan Google News -palvelussa. Tämän historian pohjalta muodostetaan artikkelisuosituksia, joista kolmea tarjotaan käyttäjän luettavaksi. Artikkelin projektissa keskityttiin suosituksien antamiseen juurikin rekisteröityneille käyttäjille. 
-\textit{tähän vielä aikarajoituksesta}
+Google News -palvelulla on käyttäjänä sekä rekisteröitymättömiä että rekisteröityneitä käyttäjiä, joista jälkimmäisille tarjotaan enemmän käytettäviä ominaisuuksia. Kuvassa \ref{googlenews} näkyy rekisteröityneen käyttäjän näkymä palvelussa. Käyttäjän niin salliessa Google tallentaa rekisteröityneen käyttäjän uutisartikkeleihin liittyviä aktiviteetteja muiltakin Googlen palveluilta ja tallentaa nämä artikkelit käyttäjän lukuhistoriaan Google News -palvelussa. Esimerkki tällaisesta aktiviteetista voisi olla vaikka uutisartikkelin hakeminen Googlen hakukoneella. Kootun historian pohjalta muodostetaan artikkelisuosituksia, joista kolmea tarjotaan käyttäjän luettavaksi. Artikkelin projektissa keskityttiin suosituksien antamiseen juurikin rekisteröityneille käyttäjille. 
 
-Järjestelmän pohjalla käytettiin malli- ja muistipohjaisen yhteistoiminnallisen suodattamisen sekoitusta.
+Toisin kuin joissakin suositusjärjestelmiä käyttävissä palveluissa, Google Newsissä tarkasteltavat tuotteet eivät saa suoraa arvosanaa käyttäjältään. Projektissa päätettiinkin käsitellä käyttäjän käyttäytymistä arvioinnin pohjana siten, että klikkaus uutisartikkeliin tulkitaan myönteisenä äänenä artikkelille. Päätöstä perusteltiin sillä, että käyttäjille tarjotaan lyhyt, selkeä kuvaus jokaisesta artikkelista listausnäkymässä. Voidaan siis olettaa, että käyttäjä on todennäköisimmin kiinnostunut artikkelista, jos hän vielä kuvauskappaleen lukemisenkin jälkeen päättää klikata artikkelia. Klikkaukset kuvastavat kuitenkin vain käyttäjien myönteisiä mielipiteitä, eivätkä kerro mitään siitä, mistä käyttäjät eivät pidä \cite{Das:2007:GNP:1242572.1242610}.
 
-Muistipohjaisena algoritmina toimi Covisitation, johon palaamme myöhemmin. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kumpikin näistä algoritmeista ja covisitation asettavat uutisartikkelille arvosanan siten, että paremmat suositukset saavat korkeamman numerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään 
+Google News -palvelu on yksi maailman suosituimmista uutissivustoista. Tarkasteltavassa projektissa havainnoitiin uutisartikkeleita yhden kuukauden ajalta ja artikkeleita kertyi useita miljoonia. Käyttäjien klikkausaktiivisuus artikkeleihin on hyvin vaihtelevaa ja klikkaushistorioiden koko vaihtelee nollasta satoihin tai jopa tuhansiin.
+
+Google asettaa tarkkoja vaatimuksia palveluidensa vasteajoille myös Google Newsin kohdalla. Esimerkiksi kotisivun näkymä generoidaan tyypillisesti sekunnissa. Tästä sekunnista jää muiden toimintojen jälkeen jäljelle muutama sata millisekuntia suositteluiden muodostamiseen. Tiukat aikavaatimukset olivatkin yksi projektin haasteista.
+
+Kappaleessa 3.1 esiteltiin jako malli- ja muistipohjaisiin yhteistoiminnallisen suodattamisen järjestelmiin. Artikkelissa käsiteltävässä järjestelmässä käytettiin niin sanottua hybridimallia, eli sekoitusta kummankin tyyppisestä järjestelmästä.
+
+Muistipohjaisena algoritmina toimii Covisitation, jota esitellään tarkemmin kappaleen loppupuolella. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kaikki nämä kolme algoritmia asettavat tarkasteltaville uutisartikkeleille arvosanat siten, että paremmat suositukset saavat korkeamman numeerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään painottaen
 
 \begin{displaymath}
 \sum_a{w_a r^{a}_{s}}
 \end{displaymath}
 
-painottaen () ja saadaan järjestetty lista artikkeleita. Tästä listasta valitaan K parhaimman arvosanan saanutta artikkelia ja suositellaan niitä käyttäjälle.
-arvotus $r_u_a,s_k$
+, (missä $w_a$ on algoritmin $a$ paino ja $r^{a}_{s}$ on algoritmin $a$ antama arvosana artikkelille $s$) ja saadaan järjestetty lista artikkeleita. Tästä listasta valitaan K parhaimman arvosanan saanutta artikkelia ja suositellaan niitä käyttäjälle.
 
-PLSI mallintaa käyttäjät (u kuuluu U) ja artikkelit (s kuuluu S) satunnaismuuttujina.
+Ensimmäisenä esittelemme todennäköisyyspohjaisen klusterointialgortimin MinHash. MinHash jakaa parin käyttäjiä samaan klusteriin todennäköisyyden, jolla käyttäjät ovat äänestäneet eli klikanneet samoja artikkeleita, perusteella.\textit{olipa kökkö lause} 
+
+Klusterointialgoritmi PLSI mallintaa käyttäjät ($u \in U$) ja artikkelit ($s \in S$) satunnaismuuttujina.
 Käyttäjien ja artikkeleiden väliset suhteet opitaan mallintamalla yhteisjakauma käyttäjistä ja artikkeleista yhdistelmäjakaumana (mixture distribution).
 Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa.
 
