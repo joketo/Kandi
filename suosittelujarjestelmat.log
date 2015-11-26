@@ -1,24 +1,24 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.18)  23 NOV 2015 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.14)  26 NOV 2015 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **suosittelujarjestelmat.tex
 (./suosittelujarjestelmat.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 28 languages loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 29 languages loaded.
 (./tktltiki2.cls
 Document Class: tktltiki2 2013/04/28 v1.04 Template for theses and seminar pape
 rs at University of Helsinki CS department
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count79
 \calc@Bcount=\count80
 \calc@Adimen=\dimen102
 \calc@Bdimen=\dimen103
 \calc@Askip=\skip41
 \calc@Bskip=\skip42
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count81
 \calc@Cskip=\skip43
 )
@@ -26,7 +26,7 @@ LaTeX Info: Redefining \addtolength on input line 77.
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
@@ -54,22 +54,22 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/12/03 3.9h The Babel package
+Package: babel 2014/09/25 3.9l The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-finnish/finnish.ldf
 Language: finnish 2007/10/20 v1.3q Finnish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/12/03 3.9h Babel common definitions
+File: babel.def 2014/09/25 3.9l Babel common definitions
 \babel@savecnt=\count85
 \U@D=\dimen112
 )
 Package babel Info: Making " an active character on input line 89.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count86
 \c@section=\count87
@@ -84,7 +84,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen113
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -98,25 +98,25 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 Package graphics Info: Driver file: dvips.def on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+File: dvips.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
@@ -266,7 +266,7 @@ Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00B8 (decimal 184)
@@ -297,7 +297,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -453,7 +453,7 @@ LaTeX Info: Redefining \] on input line 2666.
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2004/08/06 v2.20
+Package: amsthm 2009/07/02 v2.20.1
 \thm@style=\toks25
 \thm@bodyfont=\toks26
 \thm@headfont=\toks27
@@ -485,12 +485,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisrulewidth=\dimen138
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 137.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -943,11 +943,11 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 193.
 
 Package epstopdf Info: Source file: <tunnisteidensuosittelu.eps>
-(epstopdf)                    date: 2015-11-12 08:42:46
+(epstopdf)                    date: 2015-11-25 22:39:49
 (epstopdf)                    size: 277275 bytes
 (epstopdf)             Output file: <tunnisteidensuosittelu-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2015-11-12 08:42:58
+(epstopdf)                    date: 2015-11-25 22:39:49
 (epstopdf)                    size: 54979 bytes
 (epstopdf)             Command: <repstopdf --outfile=tunnisteidensuosittelu-eps
 -converted-to.pdf tunnisteidensuosittelu.eps>
@@ -967,67 +967,72 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 194--194
  []
 
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 213.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 213.
 [5 <./tunnisteidensuosittelu-eps-converted-to.pdf>]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 216.
+(babel)             in language  on input line 220.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 217.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 226.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 226.
- [6]
+(babel)             in language  on input line 221.
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 227.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 227.
+ [6]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 232.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 235.
+               Default added (so using `tbp') on input line 240.
 
 Package epstopdf Info: Source file: <knnkumpikin.eps>
-(epstopdf)                    date: 2015-10-17 23:17:59
+(epstopdf)                    date: 2015-11-25 22:39:49
 (epstopdf)                    size: 112491 bytes
 (epstopdf)             Output file: <knnkumpikin-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-17 23:20:54
+(epstopdf)                    date: 2015-11-25 22:39:49
 (epstopdf)                    size: 22600 bytes
 (epstopdf)             Command: <repstopdf --outfile=knnkumpikin-eps-converted-
 to.pdf knnkumpikin.eps>
-(epstopdf)             \includegraphics on input line 236.
+(epstopdf)             \includegraphics on input line 241.
 Package epstopdf Info: Output file is already uptodate.
-<knnkumpikin-eps-converted-to.pdf, id=127, 1573.88pt x 577.15625pt>
+<knnkumpikin-eps-converted-to.pdf, id=129, 1573.88pt x 577.15625pt>
 File: knnkumpikin-eps-converted-to.pdf Graphic file (type pdf)
 
 <use knnkumpikin-eps-converted-to.pdf>
-Package pdftex.def Info: knnkumpikin-eps-converted-to.pdf used on input line 23
-6.
+Package pdftex.def Info: knnkumpikin-eps-converted-to.pdf used on input line 24
+1.
 (pdftex.def)             Requested size: 370.0pt x 135.67577pt.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 246.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 246.
  [7]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 254.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 254.
  [8 <./knnkumpikin-eps-converted-to.pdf>]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 252.
+(babel)             in language  on input line 261.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 263.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 263.
  [9]
 ! Double subscript.
-l.262 ...korkeamman numerisen arvon. arvotus $r_u_
-                                                  a,s_k$
+l.278 arvotus $r_u_
+                   a,s_k$
 ? 
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 264.
-(./suosittelujarjestelmat.bbl
+(babel)             in language  on input line 283.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 283.
+[10]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 285.
+ (./suosittelujarjestelmat.bbl
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 1.
 
@@ -1043,37 +1048,37 @@ babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 27.
-[10])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 297.
+(babel)             in language  on input line 47.
+[11])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 297.
+(babel)             in language  on input line 318.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 297.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 297.
+(babel)             in language  on input line 318.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
  (./suosittelujarjestelmat.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 297.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 297.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
 Package rerunfilecheck Info: File `suosittelujarjestelmat.out' has not changed.
 
 (rerunfilecheck)             Checksum: AED6808AD96F1AEDA95ADA0BD866E43B;749.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 297.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 318.
  ) 
 Here is how much of TeX's memory you used:
- 9930 strings out of 494424
- 147714 string characters out of 6165346
- 278061 words of memory out of 5000000
- 12832 multiletter control sequences out of 15000+600000
- 51376 words of font info for 104 fonts, out of 8000000 for 9000
+ 9963 strings out of 494409
+ 148126 string characters out of 6164776
+ 280043 words of memory out of 5000000
+ 12863 multiletter control sequences out of 15000+600000
+ 51634 words of font info for 106 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
  31i,8n,35p,853b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/u
-sr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
+sr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
 12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/font
 s/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
@@ -1081,10 +1086,10 @@ s/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
 public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy8.pfb>
-Output written on suosittelujarjestelmat.pdf (14 pages, 269309 bytes).
+Output written on suosittelujarjestelmat.pdf (15 pages, 272085 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
  13915 words of extra memory for PDF output out of 14400 (max. 10000000)
 

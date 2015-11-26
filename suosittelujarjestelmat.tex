@@ -136,7 +136,7 @@ Suosittelujärjestelmän toteutustavat voidaan jakaa kahteen laajempaan ryhmää
 
         Sisältöpohjaisissa järjestelmissä kerätään tietoa suositeltavista tuotteista ja vertaillaan näitä toisiinsa. Tuotteen merkittävät piirteet kartoitetaan tuoteprofiiliin ja profiilia verrataan toisen tuotteen profiiliin. Tavoitteena on löytää mahdollisimman samankaltaisia profiileja. Tuote voi olla tässä yhteydessä mitä vain käyttäjälle suositeltavaa sisältöä, kuten elokuva tai uutisartikkeli. Elokuvan tapauksessa tuoteprofiiliin merkittäisiin esimerkiksi elokuvan näyttelijät, ohjaaja, valmistusvuosi ja lajityyppi. 
         
-        Yhteistoiminnallisen suodattamisen järjestelmät keskittyvät pelkkien tuotteiden ominaisuuksien sijasta tuotteiden ja käyttäjien välisiin suhteisiin. Keskenään samankaltaiset käyttäjät lajitellaan heidän antamiensa arvosteluiden perusteella. Tuotteiden samankaltaisuus määritellään vertailemalla useamman samankaltaisen käyttäjän arvosteluja. Koska tämänkaltaiset järjestelmät perustuvat käyttäjältä kerättyihin arvosteluihin, ne soveltuvat vain sellaisiin järjestelmiin, joissa tuotteet ovat ylipäänsä arvosteltavissa.
+        Yhteistoiminnallisen suodattamisen järjestelmät keskittyvät pelkkien tuotteiden ominaisuuksien sijasta tuotteiden ja käyttäjien välisiin suhteisiin. Keskenään samankaltaiset käyttäjät lajitellaan heidän antamiensa arvosteluiden perusteella. Tuotteiden samankaltaisuus määritellään vertailemalla useamman samankaltaisen käyttäjän arvosteluja. Koska tämänkaltaiset järjestelmät perustuvat käyttäjältä kerättyihin arvosteluihin, ne soveltuvat vain sellaisiin järjestelmiin, joissa tuotteet ovat ylipäänsä arvosteltavissa. \textit{tämä on vähän outo lause, voidaanhan esim. tarkastella vain käyttäjän klikkailukäyttäytymistä ja käsitellä sitä "arvosteluina".}
         
 \section{Sisältöpohjaiset järjestelmät}
         
@@ -197,12 +197,14 @@ Symmetrinen normalisointi tuottaa tunnisteelle hyvin samankaltaisia tunnistesuos
 
 Jos käyttäjän määrittelemiä tunnisteita on enemmän kuin yksi, mahdollisia suositeltavia tunnisteita on paljon. Tällöin muodostetaan tunnistekooste ja lyhennetään suositeltavien tunnisteiden listaa. Kuvasta \ref{tunnisteidensuosittelu} nähdään tunnistekooste-askeleen sijainti suositteluprosessissa.
 Esitellään esimerkiksi summaukseen perustuva tunnistekoosteen muodostaminen. Määritellään kolme tunnisteryhmää seuraavasti:
+\begin{enumerate}
+\item Käyttäjän määrittelemät tunnisteet $U$.
 
-1) Käyttäjän määrittelemät tunnisteet $U$.
+\item Ehdolla olevat tunnisteet $C_{u}$, jossa $C_{u}$ on järjestetty lista $m$:stä useimmin tunnisteen $u$ kanssa yhteisesiintyvästä tunnisteesta, kun $u \in U$.
 
-2) Ehdolla olevat tunnisteet $C_{u}$, jossa $C_{u}$ on järjestetty lista $m$:stä useimmin tunnisteen $u$ kanssa yhteisesiintyvästä tunnisteesta, kun $u \in U$.
+\item Suositeltavat tunnisteet $R$, jossa $R$ on järjestetty lista $n$:stä suositteluun parhaiten soveltuvasta tunnisteesta.
+\end{enumerate}
 
-3) Suositeltavat tunnisteet $R$, jossa $R$ on järjestetty lista $n$:stä suositteluun parhaiten soveltuvasta tunnisteesta.
 
 Tunnistekooste otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C = \cup_{u\in U}C_u$ ja tulokseksi saadaan lopullinen lista suositeltavista tunnisteista $R$. Summaukseen perustuva koosteenmuodostuksessa käytämme $m$:ää useimmin yhteisesiintyvää tunnistetta. Otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C$ yhdiste ja lasketaan yhteen tunnisteiden yhteisesiintymisarvot. Lasketaan ehdolla olevan tunnisteen $c \in C$ tulos (score)
 
@@ -212,6 +214,8 @@ score(c) := \sum_{u\in U}1_{c\in C_u}(P(c|u)),
 
 mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. Funktio $P(c|u)$ laskee epäsymmetrisen yhteisesiintymisen kuten aiemmin esitellyssä epäsymmetrisen normalisoinnin funktiossa.
 
+\textit{tähän tulossa vielä tekstiä ja kuva, jossa näytetään miten toimii konkreettisesti}
+
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
 \subsection{Yleisesti}
@@ -219,8 +223,9 @@ mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. F
         
          Automaattisen yhteistoiminnallisen suodattamisen (ACF) järjestelmiä väitetään perinteisiä sisältöpohjaisia tehokkaammaksi, sillä tuotteiden suodattaminen pohjautuu koneanalyysin sijasta käyttäjäyhteisön relaatioihin~\cite{Herlocker:2000:ECF:358916.358995}. ACF-järjestelmät toimivat hyvin kaikenlaisen tiedon arvioinnissa, sellaisenkin, jota koneen on vaikea arvioita, kuten ihmisten makutottumukset tai laatuvaatimukset. ACF-järjestelmät eivät kuitenkaan ole syrjäyttäneet sisältöpohjaisia järjestelmiä, vaan niitä käytetään usein rinnakkain.
          
-         Yhteistoiminnallisen suodattamisen järjestelmät voidaan jakaa vielä kahteen alatyyppiin: muistipohjaisiin ja mallipohjaisiin \cite{Das:2007:GNP:1242572.1242610}. Muistipohjaiset algoritmit tekevät ennusteita suoraviivaisesti käyttäjien arvosteluhistorioiden perusteella laskemalla eri käyttäjien tai tuotteiden samankaltaisuuksia.
-Mallipohjaiset algoritmit puolestaan käyttävät historioita käyttäjien mallintamiseen ja ennustavat näillä malleilla tulevia arvosteluja kohteille, joita käyttäjät eivät ole vielä nähneet.
+         Yhteistoiminnallisen suodattamisen järjestelmät voidaan jakaa vielä kahteen alatyyppiin: muistipohjaisiin ja mallipohjaisiin. Muistipohjaiset algoritmit tekevät ennusteita suoraviivaisesti käyttäjien arvosteluhistorioiden perusteella laskemalla eri käyttäjien tai tuotteiden samankaltaisuuksia. Yleisesti käytettäviä samankaltaisuuden mittaustapoja ovat Pearsonin korrelaatiokerroin ja kosinisamankaltaisuus (cosine similarity) arvosteluista muodostettujen vektoreiden välillä.
+         
+Mallipohjaiset algoritmit käyttävät historioita käyttäjien mallintamiseen ja ennustavat näillä malleilla tulevia arvosteluja kohteille, joita käyttäjät eivät ole vielä nähneet. Mallipohjaisia menetelmiä ovat esimerkiksi Bayesiläinen klusterointi, piilosemanttinen indeksointi (latent semantic indexing, LSI), todennäköisyyspohjainen piilosemanttinen indeksointi (PLSI) ja Markovin päätöksentekoprosessi (Markov Decision process) \cite{Das:2007:GNP:1242572.1242610}.
         
 Yleinen tapa toteuttaa yhteistoiminnallisen suodattamisen suosittelujärjestelmä on käyttää muistipohjaisen ja mallipohjaisen tyypin yhdistelmää. Seuraavissa kappaleissa on esitelty kaksi eri projektia, jotka käyttivät kumpikin näiden tyyppien yhdistelmää.
 
@@ -241,6 +246,10 @@ Joukkueen käyttämässä naapurustomallissa elokuvat jaotellaan pareihin, jotka
 
         Piilomuuttujamallit tulevat apuun siinä, missä naapurustomallissa on puutteita. Kun naapurustomalli havaitsee vain samankaltaisten elokuvien suhteet, hahmottaa piilomuuttujamalli elokuvien väliset riippuvuudet kattavammin. Se pystyy esimerkiksi havaitsemaan saman lajityypin elokuvien olevan samankaltaisia keskenään. Toisin kuin naapurustomallit, se ei kuitenkaan huomioi pieniä, keskenään samankaltaisista elokuvista muodostuvia ryhmiä. Malli ei esimerkiksi pysty suosittelemaan trilogian ensimmäisen osan katsoneelle käyttäjälle sarjan toista osaa. Joukkueen käyttämän piilomuuttujamallin toiminta perustuu käyttäjästä ja elokuvasta muodostettaviin vektoreihin, joiden avulla saadaan ennuste käyttäjän arviolle elokuvasta.
         
+        \textit{joukkue käytti PARANNELTUA naapurustomallia, tänne MITEN he sitä paransivat ja miksi}
+        
+        \textit{naapurustomallia ja piilomuuttujamallia käytettiin yhdistelmänä, tänne MITEN}
+        
         Joukkue huomasi olevan oleellista katsoa dataa muutenkin kuin arvostelujen sisältöjen osalta. Laajemman kuvan saamiseksi joukkue keskittyi myös siihen, minkä tyyppisiä elokuvia käyttäjä ylipäätään vaivautuu arvostelemaan. Se, mikä elokuva on niin vaikuttava, että se kannattaa arvostella, opettaa paljon käyttäjästä. Jotkut mallit ottivat huomioon myös muun muassa arvostelujen määrän, keskiarvon ja päivämäärät.
         
 Haasteetta projektille toi ihmisten elokuvamaun mallintamisen vaikeus. Mallinnuksessa tulisi ottaa huomioon muun muassa sellaisia piirteitä kun tietynlainen tunnelma, äänimaailma tai dialogin laadukkuus ja päätellä niistä käyttäjän elokuvamakua. Tällaisten ominaisuuksien huomioon ottaminen on kuitenkin algoritmisesti hyvin vaikeaa.
@@ -250,16 +259,28 @@ Haasteetta projektille toi ihmisten elokuvamaun mallintamisen vaikeus. Mallinnuk
 Artikkelin julkaisemisen jälkeen Netflixin toimintaperiaate on muuttunut elokuvavuokraamosta suoratoistopalveluksi. Tämä vaikuttaa datan muotoon ja käyttäjien käyttäytymiseen. Myös suosittelujärjestelmien toimintaa on siksi muutettu edellä esitellyistä malleista. Artikkelissa ennakoitiin muutosta pohdinnassa, jossa esitettiin parempia suosittelutuloksia saatavan aikaiseksi seuraamalla itse arvostelujen ohella muita tietoja. Tällaisia ovat esimerkiksi käyttäjän selaus- tai hakuhistoria.~\cite{Bell:2007:LNP:1345448.1345465}
 
 \subsection{Uutisartikkelien suosittelu käyttäjille - skaalautuva yhteistoiminnallinen suodattaminen}
-Google News on palvelu, joka kokoaa käyttäjilleen uutisartikkeleita monelta eri uutissivustolta ja luokittelee keskenään samanlaiset artikkelit ryhmiin. Käyttäjille tarjotaan suosituksia luettavista artikkeleista heidän lukuhistoriansa perusteella. Das, Datar, Garg ja Rajaram esittelevät ratkaisuehdotustaan suositteluun artikkelissaan \cite{Das:2007:GNP:1242572.1242610}. Heidän päätavoitteenaan oli rakentaa skaalautuva online-suosittelujärjestelmä, jota voitaisiin käyttää suurissa palveluissa kuten Google News.
+Google News on palvelu, joka kokoaa käyttäjilleen uutisartikkeleita monelta eri uutissivustolta ja luokittelee keskenään samanlaiset artikkelit ryhmiin. Käyttäjille tarjotaan suosituksia luettavista artikkeleista heidän lukuhistoriansa perusteella. Das ym. \cite{Das:2007:GNP:1242572.1242610} esittelevät artikkelissaan yhteistoiminnalliseen suodattamiseen perustuvan ratkaisuehdotuksensa suosittelujen tarjoamiseen. Heidän päätavoitteenaan oli rakentaa skaalautuva online-suosittelujärjestelmä, jota voitaisiin käyttää suurissa palveluissa kuten Google Newsissä.
 
 Google News -palvelun ominaisuudet loivat joitakin haasteita järjestelmän rakentamiselle. Valtava kävijämäärä ja miljoonat uutisartikkelit asettavat vaatimuksen skaalautuvuudelle. Palvelun osiot ovat myös jatkuvassa muutoksen tilassa, kun artikkeleita poistuu ja lisätään muutaman minuutin välein. Toisin kuin monissa muissa staattisissa palveluissa, käytettävä suosittelumalli vanhenee nopeasti eikä korjaannu pienillä muutoksilla. Osioiden jatkuva muutos on merkittävin tekijä, joka erottaa rakennettavan järjestelmän muiden suurien palveluiden suosittelujärjestelmistä \cite{Das:2007:GNP:1242572.1242610}.
 
 Google News -palvelulla on käyttäjänä sekä rekisteröitymättömiä että rekisteröityneitä käyttäjiä, joista jälkimmäisille tarjotaan enemmän käytettäviä ominaisuuksia. Google tallentaa rekisteröityneen käyttäjän uutisartikkeleihin liittyviä aktiviteetteja muiltakin Googlen palveluilta ja tallentaa nämä artikkelit käyttäjän lukuhistoriaan Google News -palvelussa. Tämän historian pohjalta muodostetaan artikkelisuosituksia, joista kolmea tarjotaan käyttäjän luettavaksi. Artikkelin projektissa keskityttiin suosituksien antamiseen juurikin rekisteröityneille käyttäjille. 
-\textit{tähän ongelmanasettelusta ja aikarajoituksesta}
+\textit{tähän vielä aikarajoituksesta}
 
-Järjestelmän pohjalla käytettiin malli- ja muistipohjaisen yhteistoiminnallisen suodattamisen sekoitusta. \textit{esitellään käytetyt PLSI ja MinHash}
+Järjestelmän pohjalla käytettiin malli- ja muistipohjaisen yhteistoiminnallisen suodattamisen sekoitusta.
 
-Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kumpikin algoritmi asettaa uutisartikkelille arvotuksen siten, että paremmat suositukset saavat korkeamman numerisen arvon. arvotus $r_u_a,s_k$
+Muistipohjaisena algoritmina toimi Covisitation, johon palaamme myöhemmin. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kumpikin näistä algoritmeista ja covisitation asettavat uutisartikkelille arvosanan siten, että paremmat suositukset saavat korkeamman numerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään 
+
+\begin{displaymath}
+\sum_a{w_a r^{a}_{s}}
+\end{displaymath}
+
+painottaen () ja saadaan järjestetty lista artikkeleita. Tästä listasta valitaan K parhaimman arvosanan saanutta artikkelia ja suositellaan niitä käyttäjälle.
+arvotus $r_u_a,s_k$
+
+PLSI mallintaa käyttäjät (u kuuluu U) ja artikkelit (s kuuluu S) satunnaismuuttujina.
+Käyttäjien ja artikkeleiden väliset suhteet opitaan mallintamalla yhteisjakauma käyttäjistä ja artikkeleista yhdistelmäjakaumana (mixture distribution).
+Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa.
+
         
 \section{Yhteenveto}
 

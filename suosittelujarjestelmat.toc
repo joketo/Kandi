@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {3.1}Yleisesti}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Netflix Prize -kilpailu}{7}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Uutisartikkelien suosittelu k\IeC {\"a}ytt\IeC {\"a}jille - skaalautuva yhteistoiminnallinen suodattaminen}{9}{subsection.3.3}
-\contentsline {section}{\numberline {4}Yhteenveto}{10}{section.4}
-\contentsline {section}{L\IeC {\"a}hteet}{10}{section*.2}
+\contentsline {section}{\numberline {4}Yhteenveto}{11}{section.4}
+\contentsline {section}{L\IeC {\"a}hteet}{11}{section*.2}
 \select@language {finnish}
 \select@language {finnish}
 \select@language {finnish}
