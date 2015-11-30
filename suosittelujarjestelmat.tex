@@ -128,7 +128,7 @@ Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohj
 
 
 \section{Johdanto}
-        Internet-käyttäjä törmää verkossa valtavaan määrään tuotteita ja muita häntä mahdollisesti kiinnostavia asioita. Tiedon rajattomalta tuntuva saatavuus muodostuu kuitenkin tietynlaiseksi ongelmaksi. Esimerkiksi suuren verkkokaupan laajaa valikoimaa ei voida asettaa kerralla käyttäjän näkyville samalla tavoin kuin perinteisessä kivijalkakaupassa. Sama ongelma tulee vastaan kaikenlaisia tuotteita, kuten musiikkia, elokuvia tai artikkeleita selatessa. On syntynyt tarve henkilökohtaisille kulutussuosituksille.
+        Internet-käyttäjä törmää verkossa valtavaan määrään sisältöä, kuten lukemattomiin häntä mahdollisesti kiinnostaviin tuotteisiin. Tiedon rajattomalta tuntuva saatavuus muodostuu kuitenkin tietynlaiseksi ongelmaksi. Esimerkiksi suuren verkkokaupan laajaa valikoimaa ei voida asettaa kerralla käyttäjän näkyville samalla tavoin kuin perinteisessä kivijalkakaupassa. Sama ongelma tulee vastaan kaikenlaisia tuotteita, kuten musiikkia, elokuvia tai artikkeleita selatessa. Hakukoneet ratkaisevat ongelman osittain, mutta eivät auta käyttäjiä, jotka eivät tiedä \textit{mitä} he haluavat löytää. On syntynyt tarve henkilökohtaisille kulutussuosituksille.
         
 Suosittelujärjestelmä valikoi käyttäjän puolesta tuotteita, joita tarjotaan hänelle kulutettavaksi. Järjestelmä kerää dataa käyttäjästä ja/tai tarjolla olevista tuotteista ja muodostaa datan perusteella suosituksia tuotteista, joita käyttäjä todennäköisesti pitäisi kiinnostavana.
 
@@ -246,7 +246,7 @@ Joukkueen käyttämässä naapurustomallissa elokuvat jaotellaan pareihin, jotka
 
         Piilomuuttujamallit tulevat apuun siinä, missä naapurustomallissa on puutteita. Kun naapurustomalli havaitsee vain samankaltaisten elokuvien suhteet, hahmottaa piilomuuttujamalli elokuvien väliset riippuvuudet kattavammin. Se pystyy esimerkiksi havaitsemaan saman lajityypin elokuvien olevan samankaltaisia keskenään. Toisin kuin naapurustomallit, se ei kuitenkaan huomioi pieniä, keskenään samankaltaisista elokuvista muodostuvia ryhmiä. Malli ei esimerkiksi pysty suosittelemaan trilogian ensimmäisen osan katsoneelle käyttäjälle sarjan toista osaa. Joukkueen käyttämän piilomuuttujamallin toiminta perustuu käyttäjästä ja elokuvasta muodostettaviin vektoreihin, joiden avulla saadaan ennuste käyttäjän arviolle elokuvasta.
         
-        \textit{joukkue käytti PARANNELTUA naapurustomallia, tänne MITEN he sitä paransivat ja miksi}
+        \textit{joukkue käytti PARANNELTUA naapurustomallia, tänne MITEN he sitä paransivat ja miksi! tästä tarkemmin artikkelissa \cite{Koren:2008:FMN:1401890.1401944}}
         
         \textit{naapurustomallia ja piilomuuttujamallia käytettiin yhdistelmänä, tänne MITEN}
         
@@ -287,11 +287,20 @@ Muistipohjaisena algoritmina toimii Covisitation, jota esitellään tarkemmin ka
 
 , (missä $w_a$ on algoritmin $a$ paino ja $r^{a}_{s}$ on algoritmin $a$ antama arvosana artikkelille $s$) ja saadaan järjestetty lista artikkeleita. Tästä listasta valitaan K parhaimman arvosanan saanutta artikkelia ja suositellaan niitä käyttäjälle.
 
-Ensimmäisenä esittelemme todennäköisyyspohjaisen klusterointialgortimin MinHash. MinHash jakaa parin käyttäjiä samaan klusteriin todennäköisyyden, jolla käyttäjät ovat äänestäneet eli klikanneet samoja artikkeleita, perusteella.\textit{olipa kökkö lause} 
+Ensimmäisenä esittelemme todennäköisyyspohjaisen klusterointialgortimin MinHash. MinHash jakaa parin käyttäjiä samaan klusteriin todennäköisyyden, jolla käyttäjät ovat äänestäneet eli klikanneet samoja artikkeleita, perusteella. Jokainen käyttäjä $u \in U$ esitetään tämän klikkaushistoriana $C_u$, eli joukkona artikkeleita($s \in S$), joita kyseinen käyttäjä on klikannut.
+
+Kahden käyttäjän $u_i$ ja $u_j$ samankaltaisuus mitataan käyttämällä jo kappaleessa 2.2 esiteltyä Jaccardin kerrointa $S(u_i, u_j) = \frac{|C_{u_{i}} \cap C_{u_{j}}|}{|C_{u_{i}} \cup C_{u_{j}}|}$. Jos haluaisimme tarjota käyttäjälle $u_i$ suosittelua, laskisimme ensin tämän samankaltaisuuden kaikkien muiden käyttäjien $u_j$ kanssa ja suosittelisimme sitten (käyttäjälle $u_i$) muiden käyttäjien $u_j$ äänestämiä artikkeleita, joiden paino on yhtäläinen $S(u_i, u_j)$ kanssa. Tämän tekeminen reaaliajassa ei kuitenkaan ole skaalautuvaa, joten Jaccardin kerroin ei semmoisenaan kelpaa artikkelin projektin käyttöön.
+
+Ongelman ratkaisuna käytetään tiivisteiden muodostamista LSH-algoritmilla. \textit{lyhyesti siitä tähän}
 
 Klusterointialgoritmi PLSI mallintaa käyttäjät ($u \in U$) ja artikkelit ($s \in S$) satunnaismuuttujina.
 Käyttäjien ja artikkeleiden väliset suhteet opitaan mallintamalla yhteisjakauma käyttäjistä ja artikkeleista yhdistelmäjakaumana (mixture distribution).
-Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa.
+Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa. \textit{tämä luonnollisesti vielä jatkuu...}
+
+\textit{tähän Covisitation}
+
+\section{Pohdinta}
+Voisiko täällä olla vaikka kappalekohtaista pohdintaa. Esim jotain tägeistä, jotain ihmisten elokuvamausta jne.
 
         
 \section{Yhteenveto}

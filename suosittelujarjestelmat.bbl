@@ -55,6 +55,16 @@
   on Computer Supported Cooperative Work}, CSCW '00, \btxpageslong {}\
   241--250, New York, NY, USA, 2000. \btxpublisherfont {ACM}.
 
+\bibitem {Koren:2008:FMN:1401890.1401944}
+\btxnamefont {\btxlastnamefont {Koren}, Yehuda}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Factorization meets the neighborhood: A multifaceted
+  collaborative filtering model}{Factorization Meets the Neighborhood: A
+  Multifaceted Collaborative Filtering Model}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the 14th ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining}, KDD '08,
+  \btxpageslong {}\ 426--434, New York, NY, USA, 2008. \btxpublisherfont
+  {ACM}\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {978-1-60558-193-4}}}.
+
 \bibitem {Ullman}
 \btxnamefont {\btxlastnamefont {Leskovec}, Jure}, \btxnamefont
   {\btxlastnamefont {Rajaraman}, Anand}\btxandcomma {} \btxandlong {}\

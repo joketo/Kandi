@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.14)  26 NOV 2015 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.14)  26 NOV 2015 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,16 +906,17 @@ Package babel Info: Redefining finnish shorthand "|
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 140.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 143.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 147.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 140.
  [1
 
 ]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 141.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 143.
+
 Overfull \hbox (5.46466pt too wide) in paragraph at lines 157--157
 []\T1/lmr/bx/n/14.4 Tunnisteiden suo-sit-te-lu käyt-tä-jil-le yh-tei-sö-tie-don
  pe-
@@ -954,7 +955,7 @@ f>
 (epstopdf)             \includegraphics on input line 194.
 Package epstopdf Info: Output file is already uptodate.
 
-<tunnisteidensuosittelu-eps-converted-to.pdf, id=104, 2169.10374pt x 763.85374p
+<tunnisteidensuosittelu-eps-converted-to.pdf, id=109, 2169.10374pt x 763.85374p
 t>
 File: tunnisteidensuosittelu-eps-converted-to.pdf Graphic file (type pdf)
  <use tunnisteidensuosittelu-eps-converted-to.pdf>
@@ -997,7 +998,7 @@ Package epstopdf Info: Source file: <knnkumpikin.eps>
 to.pdf knnkumpikin.eps>
 (epstopdf)             \includegraphics on input line 241.
 Package epstopdf Info: Output file is already uptodate.
-<knnkumpikin-eps-converted-to.pdf, id=129, 1573.88pt x 577.15625pt>
+<knnkumpikin-eps-converted-to.pdf, id=134, 1573.88pt x 577.15625pt>
 File: knnkumpikin-eps-converted-to.pdf Graphic file (type pdf)
 
 <use knnkumpikin-eps-converted-to.pdf>
@@ -1031,7 +1032,7 @@ Package epstopdf Info: Source file: <googlenews.eps>
 o.pdf googlenews.eps>
 (epstopdf)             \includegraphics on input line 264.
 Package epstopdf Info: Output file is already uptodate.
-<googlenews-eps-converted-to.pdf, id=145, 1366.10374pt x 810.02625pt>
+<googlenews-eps-converted-to.pdf, id=152, 1366.10374pt x 810.02625pt>
 File: googlenews-eps-converted-to.pdf Graphic file (type pdf)
 
 <use googlenews-eps-converted-to.pdf>
@@ -1058,8 +1059,20 @@ Package babel Info: Redefining finnish shorthand "|
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 284.
 [11]
+Overfull \hbox (10.48497pt too wide) in paragraph at lines 294--295
+[]\T1/lmr/m/n/12 (-20) Ongelman rat-kai-su-na käy-te-tään tii-vis-tei-den muo-d
+os-ta-mis-ta LSH-algoritmilla.
+ []
+
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 297.
+(babel)             in language  on input line 302.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 306.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 306.
+[12]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 306.
  (./suosittelujarjestelmat.bbl
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 1.
@@ -1076,31 +1089,31 @@ babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 26.
-[12])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 330.
+(babel)             in language  on input line 57.
+[13])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 339.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 330.
+(babel)             in language  on input line 339.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 330.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 330.
+(babel)             in language  on input line 339.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 339.
  (./suosittelujarjestelmat.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 330.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 330.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 339.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 339.
 Package rerunfilecheck Info: File `suosittelujarjestelmat.out' has not changed.
 
-(rerunfilecheck)             Checksum: AED6808AD96F1AEDA95ADA0BD866E43B;749.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 330.
+(rerunfilecheck)             Checksum: 2B2A16E82D31C2A87E551FC13B240C3F;793.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 339.
  ) 
 Here is how much of TeX's memory you used:
- 9973 strings out of 494409
- 148332 string characters out of 6164776
- 279096 words of memory out of 5000000
- 12868 multiletter control sequences out of 15000+600000
- 51725 words of font info for 107 fonts, out of 8000000 for 9000
+ 9980 strings out of 494409
+ 148448 string characters out of 6164776
+ 279148 words of memory out of 5000000
+ 12870 multiletter control sequences out of 15000+600000
+ 51812 words of font info for 108 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
  31i,8n,35p,886b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
@@ -1114,10 +1127,10 @@ s/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
 public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy8.pfb>
-Output written on suosittelujarjestelmat.pdf (16 pages, 718495 bytes).
+Output written on suosittelujarjestelmat.pdf (17 pages, 723209 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 13920 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 13928 words of extra memory for PDF output out of 14400 (max. 10000000)
 
