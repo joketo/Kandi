@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {3}Yhteistoiminnallisen suodattamisen j\IeC {\"a}rjestelm\IeC {\"a}t}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Yleisesti}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Netflix Prize -kilpailu}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Uutisartikkelien suosittelu k\IeC {\"a}ytt\IeC {\"a}jille - skaalautuva yhteistoiminnallinen suodattaminen}{9}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3}Uutisartikkelien suosittelu k\IeC {\"a}ytt\IeC {\"a}jille - skaalautuva yhteistoiminnallinen suodattaminen}{10}{subsection.3.3}
 \contentsline {section}{\numberline {4}Pohdinta}{13}{section.4}
 \contentsline {section}{\numberline {5}Yhteenveto}{13}{section.5}
 \contentsline {section}{L\IeC {\"a}hteet}{13}{section*.2}
