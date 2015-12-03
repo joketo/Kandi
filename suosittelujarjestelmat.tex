@@ -173,21 +173,17 @@ Tunnisteet voidaan jakaa eri kategorioihin käsittelyn helpottamiseksi. Aineisto
 Tunnisteiden samassa yhteydessä esiintymisten (tag co-occurence) laskeminen on suosittelun ydin. Menetelmä toimii luotettavasti vain suuren datamäärän kanssa, mutta käsiteltävästä aineistosta koostettu alijoukko oli tässä tapauksessa riittävä. Kuten edellä jo käsiteltiin, ovat eri tunnisteet suosittelun kannalta eriarvoisia keskenään. Pelkkä tunnisteiden yhteisesiintymisten laskeminen ei ota huomioon tunnisteiden esiintymisyleisyyttä, joten on suositeltavaa normalisoida tulos tunnisteiden kokonaisesiintymisellä. Normalisointiin esitellään kaksi tapaa: symmetrinen ja epäsymmetrinen.
 
 Symmetrisessä normalisoinnissa voidaan normalisoida kahden tunnisteen $t_{i}$ ja $t_{j}$ yhteiset esiintymiset Jaccardin kertoimen (Jaccard coefficient)
-
 \begin{displaymath}
 J (t_{i}, t_{j}):= \frac{|K(t_{i}) \cap K(t_{j})|} {|K(t_{i}) \cup K(t_{j})|}
 \end{displaymath}
-
 mukaan, jossa K(t) = \{kuva | kuvalla tunniste t\}.
 
 Jaccardin kerrointa käytetään yleisesti kahden objektin tai joukon samanlaisuuksien mittaamiseen. Sen kaltaiset symmetriset mittaukset soveltuvat hyvin kahden tunnisteen merkitysten vertailuun.
 
 Epäsymmetrisessä normalisoinnissa normalisointi tehdään yhden tunnisteen esiintymismäärän perusteella. Voimme laskea kahden tunnisteen $t_{i}$ ja $t_{j}$ yhteisesiintymisten todennäköisyyden ja normalisoida tuloksen tunnisteen $t_{i}$ esiintymisyleisyydellä 
-
 \begin{displaymath}
 P (t_{j} | t_{i}):= \frac{|K(t_{i}) \cap K(t_{j})|} {|K(t_{i})|}
 \end{displaymath}
-
 mukaisesti. Tässä P kertoo, millä todennäköisyydellä kuvassa, joka on merkitty tunnisteella $t_{i}$, on myös tunniste $t_{j}$.
 
 Symmetrinen normalisointi tuottaa tunnisteelle hyvin samankaltaisia tunnistesuosituksia~\cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Esimerkiksi tunnisteen \textit{Eiffel Tower} tapauksessa suurimman yhteisesiintymisluvun saavat sanat \textit{Tour Eiffel, Eiffel, Seine, La Tour Eiffel} ja \textit{Paris}. Epäsymmetrisellä mittauksella saman sanan tulokset ovat \textit{Paris, France, Tour Eiffel, Eiffel} ja \textit{Europe}. Nähdään, että epäsymmetrisellä yhteisesiintymisellä löydetään monipuolisempia suositeltavia tunnisteita.
@@ -207,13 +203,10 @@ Esitellään esimerkiksi summaukseen perustuva tunnistekoosteen muodostaminen. M
 \item Suositeltavat tunnisteet $R$, jossa $R$ on järjestetty lista $n$:stä suositteluun parhaiten soveltuvasta tunnisteesta.
 \end{enumerate}
 
-
 Tunnistekooste otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C = \cup_{u\in U}C_u$ ja tulokseksi saadaan lopullinen lista suositeltavista tunnisteista $R$. Summaukseen perustuva koosteenmuodostuksessa käytämme $m$:ää useimmin yhteisesiintyvää tunnistetta. Otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C$ yhdiste ja lasketaan yhteen tunnisteiden yhteisesiintymisarvot. Lasketaan ehdolla olevan tunnisteen $c \in C$ tulos (score)
-
 \begin{displaymath}
 score(c) := \sum_{u\in U}1_{c\in C_u}(P(c|u)),
 \end{displaymath}
-
 mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. Funktio $P(c|u)$ laskee epäsymmetrisen yhteisesiintymisen kuten aiemmin esitellyssä epäsymmetrisen normalisoinnin funktiossa.
 
 \textit{tähän tulossa vielä tekstiä ja kuva, jossa näytetään miten toimii konkreettisesti}
@@ -281,25 +274,27 @@ Google asettaa tarkkoja vaatimuksia palveluidensa vasteajoille myös Google News
 
 Kappaleessa 3.1 esiteltiin jako malli- ja muistipohjaisiin yhteistoiminnallisen suodattamisen järjestelmiin. Artikkelissa käsiteltävässä järjestelmässä käytettiin niin sanottua hybridimallia, eli sekoitusta kummankin tyyppisestä järjestelmästä.
 
-Muistipohjaisena algoritmina toimii Covisitation, jota esitellään tarkemmin kappaleen loppupuolella. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kaikki nämä kolme algoritmia asettavat tarkasteltaville uutisartikkeleille arvosanat siten, että paremmat suositukset saavat korkeamman numeerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään painottaen
-
+Muistipohjaisena algoritmina toimii Covisitation, jota esitellään tarkemmin jäljempänä. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kaikki nämä kolme algoritmia asettavat tarkasteltaville uutisartikkeleille arvosanat siten, että paremmat suositukset saavat korkeamman numeerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään painottaen kaavalla
 \begin{displaymath}
-\sum_a{w_a r^{a}_{s}}
+\sum_a{w_a r^{(a)}_{s}}
 \end{displaymath}
+missä $w_a$ on algoritmin $a$ paino ja $r^{(a)}_{s}$ on algoritmin $a$ antama arvosana artikkelille $s$ ja saadaan järjestetty lista artikkeleita. Tästä listasta valitaan K parhaimman arvosanan saanutta artikkelia ja suositellaan niitä käyttäjälle.
 
-, (missä $w_a$ on algoritmin $a$ paino ja $r^{a}_{s}$ on algoritmin $a$ antama arvosana artikkelille $s$) ja saadaan järjestetty lista artikkeleita. Tästä listasta valitaan K parhaimman arvosanan saanutta artikkelia ja suositellaan niitä käyttäjälle.
+Ensimmäisenä esittelemme todennäköisyyspohjaisen klusterointialgortimin MinHash. MinHash jakaa parin käyttäjiä samaan klusteriin sen todennäköisyyden perusteella, jolla käyttäjät ovat äänestäneet eli klikanneet samoja artikkeleita. Jokainen käyttäjä $u \in U$ esitetään tämän klikkaushistoriana $C_u$, eli joukkona artikkeleita, joita kyseinen käyttäjä on klikannut.
 
-Ensimmäisenä esittelemme todennäköisyyspohjaisen klusterointialgortimin MinHash. MinHash jakaa parin käyttäjiä samaan klusteriin todennäköisyyden, jolla käyttäjät ovat äänestäneet eli klikanneet samoja artikkeleita, perusteella. Jokainen käyttäjä $u \in U$ esitetään tämän klikkaushistoriana $C_u$, eli joukkona artikkeleita($s \in S$), joita kyseinen käyttäjä on klikannut.
+Kahden käyttäjän $u_i$ ja $u_j$ samankaltaisuus on mahdollista mitata käyttämällä jo kappaleessa 2.2 esiteltyä Jaccardin kerrointa $S(u_i, u_j) = \frac{|C_{u_{i}} \cap C_{u_{j}}|}{|C_{u_{i}} \cup C_{u_{j}}|}$. Jos haluaisimme tarjota käyttäjälle $u_i$ suosittelua, laskisimme ensin tämän samankaltaisuuden kaikkien muiden käyttäjien $u_j$ kanssa ja suosittelisimme sitten (käyttäjälle $u_i$) muiden käyttäjien $u_j$ äänestämiä artikkeleita, joiden paino on yhtäläinen suureen $S(u_i, u_j)$ kanssa. Tämän tekeminen reaaliajassa ei kuitenkaan ole skaalautuvaa, joten Jaccardin kerroin ei semmoisenaan kelpaa artikkelin projektin käyttöön.
 
-Kahden käyttäjän $u_i$ ja $u_j$ samankaltaisuus mitataan käyttämällä jo kappaleessa 2.2 esiteltyä Jaccardin kerrointa $S(u_i, u_j) = \frac{|C_{u_{i}} \cap C_{u_{j}}|}{|C_{u_{i}} \cup C_{u_{j}}|}$. Jos haluaisimme tarjota käyttäjälle $u_i$ suosittelua, laskisimme ensin tämän samankaltaisuuden kaikkien muiden käyttäjien $u_j$ kanssa ja suosittelisimme sitten (käyttäjälle $u_i$) muiden käyttäjien $u_j$ äänestämiä artikkeleita, joiden paino on yhtäläinen $S(u_i, u_j)$ kanssa. Tämän tekeminen reaaliajassa ei kuitenkaan ole skaalautuvaa, joten Jaccardin kerroin ei semmoisenaan kelpaa artikkelin projektin käyttöön.
+Ongelman ratkaisuna käytetään tiivisteiden muodostamista LSH-tekniikalla. LSH:n keskeinen ajatus on muodostaa datapisteistä tiiviste useita tiivistefunktioita käyttäen ja päätellä läheiset naapurit kyselypisteen tiivisteen avulla. Jaccardin kertoimen kanssa käytettäväksi soveltuu LSH-tekniikka MinHash. MinHashin perusidea on permutoida satunnainen joukko artikkeleita ($S$) ja laskea jokaiselle käyttäjälle $u_i$ tiivistearvo indeksinään ensimmäinen artikkeli permutaatiossa, joka kuuluu käyttäjän artikkelijoukkoon $C_{u_{i}}$. Todennäköisyys, että kahdella kaikkien $S$:n permutaatioiden joukosta valitulla permutaatiolla on sama tiiviste, on täysin yhtenevä  niiden Jaccardin kerroin -luvun eli samanlaisuuden kanssa. MinHashin jokaisen tiivisteämpärin (hei nyt... hash bucket, miten se oikein käännetään?) voidaan ajatella vastaavan klusteria. Samaan klusteriin laitetaan kaksi käyttäjää todennäköisyydellä, joka on yhtenevä näiden käyttäjien artikkelijoukkojen samankaltaisuudella $S(u_i, i_j)$.
 
-Ongelman ratkaisuna käytetään tiivisteiden muodostamista LSH-algoritmilla. \textit{lyhyesti siitä tähän}
+Toinen esitelty klusterointialgoritmi PLSI mallintaa käyttäjät ($u \in U$) ja artikkelit ($s \in S$) satunnaismuuttujina.
+Käyttäjien ja artikkeleiden väliset suhteet opitaan mallintamalla yhteisjakauma käyttäjistä ja artikkeleista sekoitejakaumana (mixture distribution).
+Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa. Malli voidaan kirjoittaa sekoitemallina
+\begin{displaymath}
+p(s|u;0)= \sum_{z=1}^{L} {p(z|u)}{p(s|z)}
+\end{displaymath}
+kun $Z$ saa arvoja väliltä $z \in Z$ ja $||Z|| = L$.
 
-Klusterointialgoritmi PLSI mallintaa käyttäjät ($u \in U$) ja artikkelit ($s \in S$) satunnaismuuttujina.
-Käyttäjien ja artikkeleiden väliset suhteet opitaan mallintamalla yhteisjakauma käyttäjistä ja artikkeleista yhdistelmäjakaumana (mixture distribution).
-Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa. \textit{tämä luonnollisesti vielä jatkuu...}
-
-\textit{tähän Covisitation}
+Covisitation esiteltiin projektin muistipohjaisena osiona. Covisitation on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. 
 
 \section{Pohdinta}
 Voisiko täällä olla vaikka kappalekohtaista pohdintaa. Esim jotain tägeistä, jotain ihmisten elokuvamausta jne.
