@@ -209,7 +209,16 @@ score(c) := \sum_{u\in U}1_{c\in C_u}(P(c|u)),
 \end{displaymath}
 mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. Funktio $P(c|u)$ laskee epäsymmetrisen yhteisesiintymisen kuten aiemmin esitellyssä epäsymmetrisen normalisoinnin funktiossa.
 
-\textit{tähän tulossa vielä tekstiä ja kuva, jossa näytetään miten toimii konkreettisesti}
+\begin{figure}[]
+\includegraphics[width = 400pt]{esimerkkitunnisteet.eps}\caption{Esimerkin tunnisteiden jakautuminen kuvitteellisessa datassa.}
+\label{esimerkkitunnisteet}
+\end{figure}
+Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta, joiden osuus kaikista tunnisteista on merkitty kuvaan \ref{esimerkkitunnisteet}. Tarkasteltavat tunnisteet ovat Talvi, Lumi ja Syöminen. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella Talvi. Päätetään, että tunnisteet Talvi ja Lumi esiintyvät yhdessä kymmenessä kuvassa ja tunnisteet Talvi ja Syöminen neljässä. Vertaillaan ensin tunnisteiden Talvi ja Lumi yhteisesiintyvyyttä kaavalla 
+\begin{displaymath}
+P (Lumi | Talvi):= \frac{|K(Talvi) \cap K(Lumi)|} {|K(Talvi)|}
+\end{displaymath}
+josta saadaan luku 0,2.
+Tehdään sama tunnisteille Talvi ja Syöminen ja saadaan luku 
 
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
