@@ -88,8 +88,8 @@ Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohj
 % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
 % This is probably mostly relevant for computer scientists
 % uncomment the following; contents of \classification will be printed under the abstract with a title
-% "ACM Computing Classification System (CCS):"
-% \classification{}
+ %"ACM Computing Classification System (CCS):"
+ \classification{Information systems ->  Information retrieval ->  Retrieval tasks and goals ->  Recommender systems}
 
 % If the automatic page number counting is not working as desired in your case,
 % uncomment the following to manually set the number of pages displayed in the abstract page:
@@ -203,7 +203,7 @@ Esitellään esimerkiksi summaukseen perustuva tunnistekoosteen muodostaminen. M
 \item Suositeltavat tunnisteet $R$, jossa $R$ on järjestetty lista $n$:stä suositteluun parhaiten soveltuvasta tunnisteesta.
 \end{enumerate}
 
-Tunnistekooste otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C = \cup_{u\in U}C_u$ ja tulokseksi saadaan lopullinen lista suositeltavista tunnisteista $R$. Summaukseen perustuva koosteenmuodostuksessa käytämme $m$:ää useimmin yhteisesiintyvää tunnistetta. Otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C$ yhdiste ja lasketaan yhteen tunnisteiden yhteisesiintymisarvot. Lasketaan ehdolla olevan tunnisteen $c \in C$ tulos (score)
+Tunnistekooste otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C = \cup_{u\in U}C_u$ ja tulokseksi saadaan lopullinen lista suositeltavista tunnisteista $R$. Summaukseen perustuva koosteenmuodostuksessa käytämme $m$:ää useimmin yhteisesiintyvää tunnistetta. Otetaan kaikkien ehdolla olevien tunnisteiden joukosta $C$ yhdiste ja lasketaan yhteen tunnisteiden yhteisesiintymisarvot. Lasketaan ehdolla olevan tunnisteen $c \in C$ arvosana (score)
 \begin{displaymath}
 score(c) := \sum_{u\in U}1_{c\in C_u}(P(c|u)),
 \end{displaymath}
@@ -213,12 +213,20 @@ mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. F
 \includegraphics[width = 400pt]{esimerkkitunnisteet.eps}\caption{Esimerkin tunnisteiden jakautuminen kuvitteellisessa datassa.}
 \label{esimerkkitunnisteet}
 \end{figure}
-Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta, joiden osuus kaikista tunnisteista on merkitty kuvaan \ref{esimerkkitunnisteet}. Tarkasteltavat tunnisteet ovat Talvi, Lumi ja Syöminen. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella Talvi. Päätetään, että tunnisteet Talvi ja Lumi esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet Talvi ja Syöminen . Vertaillaan ensin tunnisteiden Talvi ja Lumi yhteisesiintyvyyttä kaavalla 
+\begin{figure}[]
+\includegraphics[width = 400pt]{vennit.eps}\caption{Tarkasteltavien tunnisteiden yhteisesiintyminen.}
+\label{vennit}
+\end{figure}
+Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta, joiden osuus kaikista tunnisteista on merkitty kuvaan \ref{esimerkkitunnisteet}. Tarkasteltavat tunnisteet ovat \textit{Talvi}, \textit{Lumi} ja \textit{Syöminen}. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}. Päätetään, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tämä näkyy kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
 \begin{displaymath} 
 P (Lumi | Talvi):= \frac{|K(Talvi) \cap K(Lumi)|} {|K(Talvi)|}
 \end{displaymath}
 josta saadaan luku 0,3.
-Tehdään sama tunnisteille Talvi ja Syöminen ja saadaan luku 
+Tehdään sama tunnisteille \textit{Talvi} ja \textit{Syöminen} ja saadaan luku 0,09. 
+
+Tunniste \textit{Lumi} sai korkeamman arvosanan, joten suosittelemme sitä käyttäjälle mieluummin kuin tunnistetta \textit{Syöminen}. Lumi vaikuttaa luontevammalta parilta talvelle kuin syöminen, joten tunnistesuosituksen voidaan sanoa olevan hyödyllinen. Oikeassa tapauksessa yhteisesiintyviä tunnisteita käyttäjän antamalle tunnisteelle olisi paljon enemmän kuin kaksi ja suositeltavien tunnisteiden listakin pitenisi.
+
+Myös tarkasteltavassa artikkelissa todettiin edellä esitellyn suosittelustrategian tuottavan hyöviä tuloksia. \cite{Sigurbjornsson:2008:FTR:1367497.1367542}
 
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
@@ -303,10 +311,13 @@ p(s|u;0)= \sum_{z=1}^{L} {p(z|u)}{p(s|z)}
 \end{displaymath}
 kun $Z$ saa arvoja väliltä $z \in Z$ ja $||Z|| = L$.
 
-Covisitation esiteltiin projektin muistipohjaisena osiona. Covisitation on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. 
+Covisitation(tälle tarttee ehkä suomennoksen) esiteltiin projektin muistipohjaisena osiona. Covisitation on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. Voimme ajatella uutisartikkeleita verkkona, jossa artikkelisolmut on painotettu covisitation-lukumäärillä.   
+\textit{pitäisikö olla pieni kuva tällaisesta painotetusta verkosta...}
+Tätä verkkoa käsitellään vierekkäisyyslistana Bigtablessa, jonka avaimina on artikkeli-id:t.
+Kun havaitaan käyttäjän $u_i$ klikkaavan artikkelia $s_k$, käydään läpi kyseisen käyttäjän klikkaushistoria $C_{u_{i}}$. Jokaisen artikkelin $s_k \in C_{u_{i}}$ kohdalla muokataan sekä $s_j$ ja $s_k$ vierekkäisyyslistoja lisäämällä niihin kyseiseen klikkaukseen viittaava uusi merkintä. Jos kyseiselle parille on jo olemassa merkintä, päivitetään age discounted count(iih suomennos tälle).
 
 \section{Pohdinta}
-Voisiko täällä olla vaikka kappalekohtaista pohdintaa. Esim jotain tägeistä, jotain ihmisten elokuvamausta jne.
+Ehkäpä täällä voisi olla vaikka kappalekohtaista pohdintaa. Esim jotain tägeistä, jotain ihmisten elokuvamausta jne. Ja sitten jotain yleistä, jos jotain keksii... Ehkä, tai sitten koko pohdinta pois.
 
         
 \section{Yhteenveto}
