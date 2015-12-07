@@ -3,13 +3,13 @@
 \contentsline {section}{\numberline {2}Sis\IeC {\"a}lt\IeC {\"o}pohjaiset j\IeC {\"a}rjestelm\IeC {\"a}t}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Yleisesti}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Tunnisteiden suosittelu k\IeC {\"a}ytt\IeC {\"a}jille yhteis\IeC {\"o}tiedon perusteella}{3}{subsection.2.2}
-\contentsline {section}{\numberline {3}Yhteistoiminnallisen suodattamisen j\IeC {\"a}rjestelm\IeC {\"a}t}{8}{section.3}
-\contentsline {subsection}{\numberline {3.1}Yleisesti}{8}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Netflix Prize -kilpailu}{9}{subsection.3.2}
+\contentsline {section}{\numberline {3}Yhteistoiminnallisen suodattamisen j\IeC {\"a}rjestelm\IeC {\"a}t}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Yleisesti}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Netflix Prize -kilpailu}{8}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Uutisartikkelien suosittelu k\IeC {\"a}ytt\IeC {\"a}jille - skaalautuva yhteistoiminnallinen suodattaminen}{11}{subsection.3.3}
 \contentsline {section}{\numberline {4}Pohdinta}{15}{section.4}
 \contentsline {section}{\numberline {5}Yhteenveto}{15}{section.5}
-\contentsline {section}{L\IeC {\"a}hteet}{16}{section*.2}
+\contentsline {section}{L\IeC {\"a}hteet}{15}{section*.2}
 \select@language {finnish}
 \select@language {finnish}
 \select@language {finnish}
