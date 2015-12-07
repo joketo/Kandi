@@ -210,14 +210,14 @@ score(c) := \sum_{u\in U}1_{c\in C_u}(P(c|u)),
 mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. Funktio $P(c|u)$ laskee epäsymmetrisen yhteisesiintymisen kuten aiemmin esitellyssä epäsymmetrisen normalisoinnin funktiossa.
 
 \begin{figure}[]
-\includegraphics[width = 380pt]{tunnisteet.eps}\caption{Esimerkin tunnisteiden jakautuminen kuvitteellisessa datassa.}
+\includegraphics[width = 390pt]{tunnisteet.eps}\caption{Esimerkin tunnisteiden jakautuminen kuvitteellisessa datassa.}
 \label{esimerkkitunnisteet}
 \end{figure}
 \begin{figure}[]
 \includegraphics[width = 400pt]{vennit.eps}\caption{Tarkasteltavien tunnisteiden yhteisesiintyminen.}
 \label{vennit}
 \end{figure}
-Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta, joiden osuus kaikista tunnisteista on merkitty kuvaan \ref{esimerkkitunnisteet}. Tarkasteltavat tunnisteet ovat \textit{Talvi}, \textit{Lumi} ja \textit{Syöminen}. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}. Päätetään, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tämä näkyy kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
+Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta, joiden osuus kaikista tunnisteista on merkitty kuvaan \ref{esimerkkitunnisteet}. Tarkasteltavat tunnisteet ovat \textit{Talvi}, \textit{Lumi} ja \textit{Syöminen}. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}. Oletetaan, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tämä näkyy kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
 \begin{displaymath} 
 P (Lumi | Talvi):= \frac{|K(Talvi) \cap K(Lumi)|} {|K(Talvi)|}
 \end{displaymath}
