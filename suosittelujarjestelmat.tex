@@ -230,9 +230,10 @@ Realistisemmassa esimerkissä tulisi olla kriittinen sen suhteen, minkälaiset t
 \begin{displaymath}
 kuvailevuus(c) := \frac{k_d}{k_d + abs(k_d -log(|c|))}
 \end{displaymath}
-jossa $abs(x)$ palauttaa $x$:n absoluuttisen arvon ja $k_d$ on parametri, joka määritellään kouluttamalla.
+jossa $abs(x)$ palauttaa $x$:n absoluuttisen arvon ja $k_d$ on funktion parametri, joka määritellään kouluttamalla. Artikkelissa parametrin $k_d$ kouluttamiseen käytettiin 131 kuvan joukkoa. \textit{mieti, laitatko tuota funktiota ollenkaan, kun k:tä ei saa tyhjentävästi selitettyä}
 
 Tarkasteltavassa artikkelissa evaluoitiin kaikkia edellä esiteltyjä funktioita suurilla kuva- ja tunnistejoukoilla. Tuloksena todettiin edellä esitellyn suosittelustrategian tuottavan hyviä tuloksia. \cite{Sigurbjornsson:2008:FTR:1367497.1367542}
+We tuned our four strategies by performing a parameter-sweep and maximising system performance both in terms of MRR and P@5.
 
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
@@ -249,7 +250,7 @@ Yleinen tapa toteuttaa yhteistoiminnallisen suodattamisen suosittelujärjestelm�
 
 \subsection{Netflix Prize -kilpailu}
 
-        Suosittelujärjestelmät nousivat suuremman yleisön puheenaiheeksi digitaalisen elokuvavuokraamo Netflixin vuonna 2006 järjestämän Netflix Prize -kilpailun ansiosta. Kilpailun tarkoituksena oli parantaa Netflixin käyttämää suosittelujärjestelmää ja pienentää annetun testidatan keskineliöpoikkeamaa 10 prosentilla. Testidata koostui yli 100 miljoonasta elokuva-arvostelusta noin 480 000 käyttäjältä 17 770 eri elokuvasta. Bell ja Koren käsittelevät artikkelissaan ~\cite{Bell:2007:LNP:1345448.1345465} tässä kilpailussa vuoden sisällä parhaiten pärjänneen joukkueen suosittelujärjestelmämallia, joka saavutti 8,43 \%:n parannuksen.
+        Suosittelujärjestelmät nousivat suuremman yleisön puheenaiheeksi digitaalisen elokuvavuokraamo Netflixin vuonna 2006 järjestämän Netflix Prize -kilpailun ansiosta. Kilpailun tarkoituksena oli parantaa Netflixin käyttämää suosittelujärjestelmää ja pienentää annetun testidatan keskineliöpoikkeamaa 10 prosentilla. Testidata koostui yli 100 miljoonasta elokuva-arvostelusta noin 480 000 käyttäjältä 17 770 eri elokuvasta. Bell ja Koren käsittelevät artikkelissaan \cite{Bell:2007:LNP:1345448.1345465} tässä kilpailussa vuoden sisällä parhaiten pärjänneen joukkueen suosittelujärjestelmämallia, joka saavutti 8,43 \%:n parannuksen.
         
         Huomattavaa joukkueen käyttämässä mallissa oli se, että se käytti kahden tärkeimmän yhteistoiminnallisen suodattamisen mallityypin yhdistelmää. Kummassakin mallissa on omat puutteensa, mutta yhdessä ne tuottivat hyviä tuloksia.
         
@@ -260,11 +261,28 @@ Yleinen tapa toteuttaa yhteistoiminnallisen suodattamisen suosittelujärjestelm�
 \label{knn}
 \end{figure} 
  
-Joukkueen käyttämässä naapurustomallissa elokuvat jaotellaan pareihin, jotka on arvosteltu pääsääntöisesti samalla tavalla. Näiden parien avulla pyritään ennustamaan käyttäjän mielipide elokuvasta, jota hän ei ole arvostellut. Naapurustomalli ottaa huomioon vain osan käyttäjän arvosteluista eikä siis havaitse niissä piileviä heikkoja signaaleja.
+Joukkueen käyttämässä naapurustomallissa elokuvat jaotellaan pareihin, jotka on arvosteltu pääsääntöisesti samalla tavalla. Näiden parien avulla pyritään ennustamaan käyttäjän mielipide elokuvasta, jota hän ei ole arvostellut. Naapurustomalli ottaa huomioon vain osan käyttäjän arvosteluista eikä siis havaitse niissä piileviä heikkoja signaaleja. 
 
-        Piilomuuttujamallit tulevat apuun siinä, missä naapurustomallissa on puutteita. Kun naapurustomalli havaitsee vain samankaltaisten elokuvien suhteet, hahmottaa piilomuuttujamalli elokuvien väliset riippuvuudet kattavammin. Se pystyy esimerkiksi havaitsemaan saman lajityypin elokuvien olevan samankaltaisia keskenään. Toisin kuin naapurustomallit, se ei kuitenkaan huomioi pieniä, keskenään samankaltaisista elokuvista muodostuvia ryhmiä. Malli ei esimerkiksi pysty suosittelemaan trilogian ensimmäisen osan katsoneelle käyttäjälle sarjan toista osaa. Joukkueen käyttämän piilomuuttujamallin toiminta perustuu käyttäjästä ja elokuvasta muodostettaviin vektoreihin, joiden avulla saadaan ennuste käyttäjän arviolle elokuvasta.
+	Piilomuuttujamallit tulevat apuun siinä, missä naapurustomallissa on puutteita. Kun naapurustomalli havaitsee vain samankaltaisten elokuvien suhteet, hahmottaa piilomuuttujamalli elokuvien väliset riippuvuudet kattavammin. Se pystyy esimerkiksi havaitsemaan saman lajityypin elokuvien olevan samankaltaisia keskenään. Toisin kuin naapurustomallit, se ei kuitenkaan huomioi pieniä, keskenään samankaltaisista elokuvista muodostuvia ryhmiä. Malli ei esimerkiksi pysty suosittelemaan trilogian ensimmäisen osan katsoneelle käyttäjälle sarjan toista osaa. Joukkueen käyttämän piilomuuttujamallin toiminta perustuu käyttäjästä ja elokuvasta muodostettaviin vektoreihin, joiden avulla saadaan ennuste käyttäjän arviolle elokuvasta.
         
-        \textit{joukkue käytti PARANNELTUA naapurustomallia, tänne MITEN he sitä paransivat ja miksi! tästä tarkemmin artikkelissa \cite{Koren:2008:FMN:1401890.1401944}}
+	Koren esittelee käytettyjen mallien teknistä puolta tarkemmin omassa artikkelissaan \cite{Koren:2008:FMN:1401890.1401944}. Naapurustomallia ei käytetty sellaisenaan, vaan sitä paranneltiin käyttötarkoitukseen sopivaksi. Pohjalla ollut, yleisesti käytössä oleva naapurustomalli,
+\begin{displaymath}
+\hat{r}_{ui} = b_{ui} + \frac{\sum_{j\in S^{k}(i;u)} s_{ij}(r_{uj}-b_{uj})}{\sum_{j \in S^{k} (i;u)}s_{ij} }
+\end{displaymath}         
+antaa käyttäjän $u$ ennustetun arvion $r_{u_{i}}$ tuotteelle $i$. Mallissa
+\begin{enumerate}
+\item Ennuste $r_{u_{i}}$ otetaan naapurituotteiden arvosteluiden painotettuna keskiarvona.
+\item Funktio $b_{ui} = \mu + b_u + b_i$ antaa pohja-arvion (baseline estimate) jossa $b_u$ on käyttäjän $u$ havaittu poikkeama keskiarvosta ja $b_i$ vastaavasti tuotteen $i$ havaittu poikkeama keskiarvosta. Parametri $\mu$ on keskimääräinen arvosana tuotteen arviolle.
+\item Samankaltaisuusmittaus $S^k (i;u)$ antaa $k$ käyttäjän $u$ arvostelemaa kaikkein samankaltaisinta tuotetta tuotteen $i$ kanssa.
+\item Funktio $s_{ij}$ mittaa käyttäjien samankaltaisuutta $s_{ij} \stackrel{def}{=} \frac{n_{ij}}{n_{ij} + \lambda_2} p_{ij}$, jossa $n_{ij}$ on niiden käyttäjien lukumäärä, jotka arvostelivat tuotteet $i$ ja $j$. Tyypillinen arvo parametrille $\lambda_2$ on 100. Samankaltaisuuden mittaamisen pohjana on \textit{Pearson correlation coefficient} $p_{ij}$.
+\end{enumerate} 
+
+Tällaisenaan käytettynä malli ei kuitenkaan ole täysin ongelmaton. Ryhmä näki suurimpana ongelmana sen, että metodin toiminnalle ei ole olemassa formaalia perustelua \cite{Koren:2008:FMN:1401890.1401944}.
+Ongelmat ratkaistiin päivitetyllä mallilla
+\begin{displaymath}
+\hat{r}_{ui} = b_{ui} + \sum_{j\in{S^{k}} (i;u)}\theta^{u}_{ij}(r_{uj}-b_{uj})
+\end{displaymath}
+jossa annetulle joukolle naapureita $S^{k}(i;u)$ lasketaan interpolaatiopainot $\theta^{u}_{ij}|j \in S^{k}(i;u)$.
         
         \textit{naapurustomallia ja piilomuuttujamallia käytettiin yhdistelmänä, tänne MITEN}
         
