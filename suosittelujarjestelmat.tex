@@ -89,7 +89,7 @@ Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohj
 % This is probably mostly relevant for computer scientists
 % uncomment the following; contents of \classification will be printed under the abstract with a title
  %"ACM Computing Classification System (CCS):"
- \classification{Information systems ->  Information retrieval ->  Retrieval tasks and goals ->  Recommender systems}
+ \classification{\textbf{Information systems---Recommender systems} }
 
 % If the automatic page number counting is not working as desired in your case,
 % uncomment the following to manually set the number of pages displayed in the abstract page:
@@ -164,7 +164,7 @@ Käyttäjien motivaatio merkitä kuvansa tunnisteilla tuntuu olevan niiden kyvys
 
 Flickr-kuvapalvelu koostui vuonna 2008 8,5 miljoonasta rekisteröityneestä käyttäjästä ja valtavasta kuvamäärästä. Sigurbjörnsson ja van Zwol tarkastelivat tästä datasta satunnaisesti koostettua 52 miljoonan kuvan osajoukkoa~\cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Jokaisessa kuvassa oli vähintään yksi tunniste. Yhteensä tunnisteita oli noin 188 miljoonaa, joista 3,7 miljoonaa olivat uniikkeja.
 
-	Vain kerran esiintyvät tunnisteet ovat yleensä niin erikoislaatuisia tai kirjoitusvirheellisiä, ettei niitä kannata suositella. Jos taas tunniste on yksi yleisimmin käytetyistä, esimerkiksi vuosiluku, on se yleensä liian geneerinen suositeltavaksi~\cite{Sigurbjornsson:2008:FTR:1367497.1367542}.
+	Vain kerran esiintyvät tunnisteet ovat yleensä niin erikoislaatuisia tai kirjoitusvirheellisiä, ettei niitä kannata suositella. Jos taas tunniste on yksi yleisimmin käytetyistä, esimerkiksi vuosiluku, on se yleensä liian geneerinen suositeltavaksi~\cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Tämän ongelman ratkaisuun palaamme tuonnempana.
 	
 Käyttäjien antamien tunnisteiden määrä vaihtelee yksilökohtaisesti ja vaikuttaa suosittelun kannattavuuteen. Enimmillään tarkasteltavan joukon käyttäjät olivat merkinneet kuvaan yli 50 tunnistetta. Tällaisissa tilanteissa on vaikeaa tarjota hyödyllisiä tunnistesuosituksia. 64 \% kuvista oli merkitty 1-3 tunnisteella, jolloin suosituksia on helppo muodostaa ja järkevää tarjota.
 
@@ -214,10 +214,10 @@ mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. F
 \label{esimerkkitunnisteet}
 \end{figure}
 \begin{figure}[]
-\includegraphics[width = 400pt]{vennit.eps}\caption{Tarkasteltavien tunnisteiden yhteisesiintyminen.}
+\includegraphics[width = 330pt]{uudetvennit.eps}\caption{Tarkasteltavien tunnisteiden yhteisesiintyminen.}
 \label{vennit}
 \end{figure}
-Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta, joiden osuus kaikista tunnisteista on merkitty kuvaan \ref{esimerkkitunnisteet}. Tarkasteltavat tunnisteet ovat \textit{Talvi}, \textit{Lumi} ja \textit{Syöminen}. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}. Oletetaan, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tämä näkyy kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
+Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta: \textit{Talvi} (500), \textit{Lumi} (200) ja \textit{Syöminen} (3000). Kuvasta \ref{esimerkkitunnisteet} nähdään näiden tunnisteiden esiintymismäärät suhteessa toisiinsa. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}. Oletetaan, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tämä näkyy kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
 \begin{displaymath} 
 P (Lumi | Talvi):= \frac{|K(Talvi) \cap K(Lumi)|} {|K(Talvi)|}
 \end{displaymath}
@@ -226,7 +226,13 @@ Tehdään sama tunnisteille \textit{Talvi} ja \textit{Syöminen} ja saadaan luku
 
 Tunniste \textit{Lumi} sai korkeamman arvosanan, joten suosittelemme sitä käyttäjälle mieluummin kuin tunnistetta \textit{Syöminen}. Lumi vaikuttaa luontevammalta parilta talvelle kuin syöminen, joten tunnistesuosituksen voidaan sanoa olevan hyödyllinen. Oikeassa tapauksessa yhteisesiintyviä tunnisteita käyttäjän antamalle tunnisteelle olisi paljon enemmän kuin kaksi ja suositeltavien tunnisteiden listakin pitenisi.
 
-Myös tarkasteltavassa artikkelissa todettiin edellä esitellyn suosittelustrategian tuottavan hyöviä tuloksia. \cite{Sigurbjornsson:2008:FTR:1367497.1367542}
+Realistisemmassa esimerkissä tulisi olla kriittinen sen suhteen, minkälaiset tunnisteet saavat korkeimman arvosanan. Ensimmäisenä listassa on nimittäin usein niin yleisluontoisia tunnisteita, etteivät ne tarjoa tarpeeksi kuvaavaa informaatiota käsiteltävästä kuvasta. Kuten jo kappaleen alussa mainittiin, tällaisia kaikkein yleisimmin käytettyjä tunnisteita ei kannata suositella käyttäjille. Ongelman ratkaisuksi tehdään askel nimeltä kuvailevuuden edistäminen (descriptiveness-promotion) ja alennetaan todella usein esiintyvien tunnisteiden arvosanaa funktiolla
+\begin{displaymath}
+kuvailevuus(c) := \frac{k_d}{k_d + abs(k_d -log(|c|))}
+\end{displaymath}
+jossa $abs(x)$ palauttaa $x$:n absoluuttisen arvon ja $k_d$ on parametri, joka määritellään kouluttamalla.
+
+Tarkasteltavassa artikkelissa evaluoitiin kaikkia edellä esiteltyjä funktioita suurilla kuva- ja tunnistejoukoilla. Tuloksena todettiin edellä esitellyn suosittelustrategian tuottavan hyviä tuloksia. \cite{Sigurbjornsson:2008:FTR:1367497.1367542}
 
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
@@ -301,22 +307,24 @@ Ensimmäisenä esittelemme todennäköisyyspohjaisen klusterointialgortimin MinH
 
 Kahden käyttäjän $u_i$ ja $u_j$ samankaltaisuus on mahdollista mitata käyttämällä jo kappaleessa 2.2 esiteltyä Jaccardin kerrointa $S(u_i, u_j) = \frac{|C_{u_{i}} \cap C_{u_{j}}|}{|C_{u_{i}} \cup C_{u_{j}}|}$. Jos haluaisimme tarjota käyttäjälle $u_i$ suosittelua, laskisimme ensin tämän samankaltaisuuden kaikkien muiden käyttäjien $u_j$ kanssa ja suosittelisimme sitten (käyttäjälle $u_i$) muiden käyttäjien $u_j$ äänestämiä artikkeleita, joiden paino on yhtäläinen suureen $S(u_i, u_j)$ kanssa. Tämän tekeminen reaaliajassa ei kuitenkaan ole skaalautuvaa, joten Jaccardin kerroin ei semmoisenaan kelpaa artikkelin projektin käyttöön.
 
-Ongelman ratkaisuna käytetään tiivisteiden muodostamista LSH-tekniikalla. LSH:n keskeinen ajatus on muodostaa datapisteistä tiiviste useita tiivistefunktioita käyttäen ja päätellä läheiset naapurit kyselypisteen tiivisteen avulla. Jaccardin kertoimen kanssa käytettäväksi soveltuu LSH-tekniikka MinHash. MinHashin perusidea on permutoida satunnainen joukko artikkeleita ($S$) ja laskea jokaiselle käyttäjälle $u_i$ tiivistearvo indeksinään ensimmäinen artikkeli permutaatiossa, joka kuuluu käyttäjän artikkelijoukkoon $C_{u_{i}}$. Todennäköisyys, että kahdella kaikkien $S$:n permutaatioiden joukosta valitulla permutaatiolla on sama tiiviste, on täysin yhtenevä  niiden Jaccardin kerroin -luvun eli samanlaisuuden kanssa. MinHashin jokaisen tiivisteämpärin (hei nyt... hash bucket, miten se oikein käännetään?) voidaan ajatella vastaavan klusteria. Samaan klusteriin laitetaan kaksi käyttäjää todennäköisyydellä, joka on yhtenevä näiden käyttäjien artikkelijoukkojen samankaltaisuudella $S(u_i, i_j)$.
+Ongelman ratkaisuna käytetään tiivisteiden muodostamista LSH-tekniikalla (Locality Sensitive Hashing). LSH:n keskeinen ajatus on muodostaa datapisteistä tiiviste useita tiivistefunktioita käyttäen ja päätellä läheiset naapurit kyselypisteen tiivisteen avulla. Jaccardin kertoimen kanssa käytettäväksi soveltuu LSH-tekniikka MinHash. MinHashin perusidea on permutoida satunnainen joukko artikkeleita ($S$) ja laskea jokaiselle käyttäjälle $u_i$ tiivistearvo indeksinään ensimmäinen artikkeli permutaatiossa, joka kuuluu käyttäjän artikkelijoukkoon $C_{u_{i}}$. Todennäköisyys, että kahdella kaikkien $S$:n permutaatioiden joukosta valitulla permutaatiolla on sama tiiviste, on täysin yhtenevä  niiden Jaccardin kerroin -luvun eli samanlaisuuden kanssa. MinHashin jokaisen tiivisteluokan voidaan ajatella vastaavan klusteria. Samaan klusteriin laitetaan kaksi käyttäjää todennäköisyydellä, joka on yhtenevä näiden käyttäjien artikkelijoukkojen samankaltaisuudella $S(u_i, i_j)$.
 
 Toinen esitelty klusterointialgoritmi PLSI mallintaa käyttäjät ($u \in U$) ja artikkelit ($s \in S$) satunnaismuuttujina.
 Käyttäjien ja artikkeleiden väliset suhteet opitaan mallintamalla yhteisjakauma käyttäjistä ja artikkeleista sekoitejakaumana (mixture distribution).
 Suhdetta merkitään piilomuuttujalla Z, jonka voidaan ajatella kuvastavan käyttäjä- ja artikkeliyhteisöjä siten, että samankaltaiset käyttäjät ovat oma yhteisönsä ja samankaltaiset artikkelit omansa. Malli voidaan kirjoittaa sekoitemallina
 \begin{displaymath}
-p(s|u;0)= \sum_{z=1}^{L} {p(z|u)}{p(s|z)}
+p(s|u;\theta)= \sum_{z \in Z} {p(z|u)}{p(s|z)}
 \end{displaymath}
-kun $Z$ saa arvoja väliltä $z \in Z$ ja $||Z|| = L$.
+kun $\theta$ on todennäköisyysjakauman parametrit sisältävä vektori.
 
-Covisitation(tälle tarttee ehkä suomennoksen) esiteltiin projektin muistipohjaisena osiona. Covisitation on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. Voimme ajatella uutisartikkeleita verkkona, jossa artikkelisolmut on painotettu covisitation-lukumäärillä.   
+Covisitation("kanssavierailu") esiteltiin projektin muistipohjaisena osiona. Kanssavierailu on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. Voimme ajatella uutisartikkeleita verkkona, jossa artikkelisolmut on painotettu kanssavierailu-lukumäärillä.   
 \textit{pitäisikö olla pieni kuva tällaisesta painotetusta verkosta...}
-Tätä verkkoa käsitellään vierekkäisyyslistana Bigtablessa, jonka avaimina on artikkeli-id:t.
-Kun havaitaan käyttäjän $u_i$ klikkaavan artikkelia $s_k$, käydään läpi kyseisen käyttäjän klikkaushistoria $C_{u_{i}}$. Jokaisen artikkelin $s_k \in C_{u_{i}}$ kohdalla muokataan sekä $s_j$ ja $s_k$ vierekkäisyyslistoja lisäämällä niihin kyseiseen klikkaukseen viittaava uusi merkintä. Jos kyseiselle parille on jo olemassa merkintä, päivitetään age discounted count(iih suomennos tälle).
+Tätä verkkoa käsitellään vierekkäisyyslistana, jonka avaimina on artikkeli-id:t.
+Kun havaitaan käyttäjän $u_i$ klikkaavan artikkelia $s_k$, käydään läpi kyseisen käyttäjän klikkaushistoria $C_{u_{i}}$. Jokaisen artikkelin $s_k \in C_{u_{i}}$ kohdalla muokataan sekä $s_j$ ja $s_k$ vierekkäisyyslistoja lisäämällä niihin kyseiseen klikkaukseen viittaava uusi merkintä. Jos kyseiselle parille on jo olemassa merkintä, päivitetään verkon painoja siten, että vanhojen kanssavierailujen merkitys vähenee ajan mittaan.
 
 \section{Pohdinta}
+mitä kuvista voi päätellä tunnistetietoihin, eri tunnistemenetelmät mitä ei käyty
+
 Ehkäpä täällä voisi olla vaikka kappalekohtaista pohdintaa. Esim jotain tägeistä, jotain ihmisten elokuvamausta jne. Ja sitten jotain yleistä, jos jotain keksii... Ehkä, tai sitten koko pohdinta pois.
 
         
