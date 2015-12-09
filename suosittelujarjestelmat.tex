@@ -337,9 +337,14 @@ p(s|u;\theta)= \sum_{z \in Z} {p(z|u)}{p(s|z)}
 \end{displaymath}
 kun $\theta$ on todennäköisyysjakauman parametrit sisältävä vektori.
 
-Covisitation("kanssavierailu") esiteltiin projektin muistipohjaisena osiona. Kanssavierailu on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. Voimme ajatella uutisartikkeleita verkkona, jossa artikkelisolmut on painotettu kanssavierailu-lukumäärillä.   
-\textit{pitäisikö olla pieni kuva tällaisesta painotetusta verkosta...}
-Tätä verkkoa käsitellään vierekkäisyyslistana, jonka avaimina on artikkeli-id:t.
+\begin{figure}[]
+\includegraphics[width = 390pt]{verkko.eps}\caption{Uutisartikkelit verkkona, jossa painoina kanssavierailujen lukumäärät.}
+\label{verkko}
+\end{figure} 
+
+Covisitation("kanssavierailu") esiteltiin projektin muistipohjaisena osiona. Kanssavierailu on tapahtuma, jossa sama käyttäjä klikkaa kahta artikkelia tietyn ajan sisällä. Voimme ajatella uutisartikkeleita kuvan \ref{verkko} tapaisena verkkona, jossa artikkelisolmut on painotettu kanssavierailujen lukumäärillä.   
+
+Verkkoa käsitellään vierekkäisyyslistana, jonka avaimina on artikkeli-id:t.
 Kun havaitaan käyttäjän $u_i$ klikkaavan artikkelia $s_k$, käydään läpi kyseisen käyttäjän klikkaushistoria $C_{u_{i}}$. Jokaisen artikkelin $s_k \in C_{u_{i}}$ kohdalla muokataan sekä $s_j$ ja $s_k$ vierekkäisyyslistoja lisäämällä niihin kyseiseen klikkaukseen viittaava uusi merkintä. Jos kyseiselle parille on jo olemassa merkintä, päivitetään verkon painoja siten, että vanhojen kanssavierailujen merkitys vähenee ajan mittaan.
 
 \section{Pohdinta}
