@@ -239,7 +239,11 @@ Tarkasteltavassa artikkelissa evaluoitiin kaikkia edellä esiteltyjä funktioita
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
 \subsection{Yleisesti}
-        Yhteistoiminnalliseen suodattamiseen perustuvissa suosittelujärjestelmissä otetaan yksittäisen käyttäjän ja tuotteiden sijasta huomioon kaikkien käyttäjien väliset riippuvuudet. Suositusjärjestelmä vertaa käyttäjästä kerättyjä tietoja muiden käyttäjien tietoihin ja luokittelee käyttäjät samanlaisten mieltymysten perusteella pienemmiksi ryhmiksi. Jos joku tällaisen ryhmän jäsenistä on pitänyt jostakin tietystä tuotteesta, suositellaan tuotetta muillekin ryhmän jäsenille.
+\begin{figure}[]
+\includegraphics[width = 390pt]{yhteistoiminnallinen.eps}\caption{Havainnollistus yhteistoiminnalliseen suodattamiseen perustuvan suosittelujärjestelmän perusperiaatteesta. Käyttäjät $A$ ja $B$ ovat arvostelleet tuotteet $i$ ja $u$ samalla tavalla siten, että kumpikin pitää näistä tuotteista. Lisäksi käyttäjä $A$ on arvostellut tuotteen $u$ ja osoittanut pitävänsä siitä. Suositellaan siis tuotetta $u$ käyttäjälle $B$, jolla ei vielä ole arvostelua kyseisestä tuotteesta.}
+\label{yhteistoiminnallinen}
+\end{figure}
+        Yhteistoiminnalliseen suodattamiseen perustuvissa suosittelujärjestelmissä otetaan yksittäisen käyttäjän ja tuotteiden sijasta huomioon kaikkien käyttäjien väliset riippuvuudet. Suositusjärjestelmä vertaa käyttäjästä kerättyjä tietoja muiden käyttäjien tietoihin ja luokittelee käyttäjät samanlaisten mieltymysten perusteella pienemmiksi ryhmiksi. Jos joku tällaisen ryhmän jäsenistä on pitänyt jostakin tietystä tuotteesta, suositellaan tuotetta muillekin ryhmän jäsenille. Kuvassa \ref{yhteistoiminnallinen} on esitelty tällaisen järjestelmän periaate hyvin yleisellä tasolla.
         
          Automaattisen yhteistoiminnallisen suodattamisen (ACF) järjestelmiä väitetään perinteisiä sisältöpohjaisia tehokkaammaksi, sillä tuotteiden suodattaminen pohjautuu koneanalyysin sijasta käyttäjäyhteisön relaatioihin~\cite{Herlocker:2000:ECF:358916.358995}. ACF-järjestelmät toimivat hyvin kaikenlaisen tiedon arvioinnissa, sellaisenkin, jota koneen on vaikea arvioita, kuten ihmisten makutottumukset tai laatuvaatimukset. ACF-järjestelmät eivät kuitenkaan ole syrjäyttäneet sisältöpohjaisia järjestelmiä, vaan niitä käytetään usein rinnakkain.
          
