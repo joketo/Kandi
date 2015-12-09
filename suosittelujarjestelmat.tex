@@ -79,11 +79,11 @@
 \date{\today}
 \level{Kandidaatintutkielma}
 \abstract{Aineessa tutustutaan sekä sisältöpohjaiseen että yhteistoiminnalliseen suodattamiseen perustuvien suosittelujärjestelmien toimintaan yleisellä tasolla. Aineesta selviää, mikä on näiden kahden suosittelujärjestelmätyypin oleellisin ero.
-Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohjaisen suosittelun tapauksessa Flickr-kuvapalvelun tunnisteiden suosittelu käyttäjille. Yhteistoiminnallista suosittelua avataan esittelemällä Netflix Prize -kilpailuun osallistuneen joukkueen suosittelujärjestelmää.}
+Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohjaisen suosittelun tapauksessa Flickr-kuvapalvelun tunnisteiden suosittelu käyttäjille. Yhteistoiminnallista suosittelua avataan esittelemällä Netflix Prize -kilpailuun osallistuneen joukkueen suosittelujärjestelmää. Tutustumme myös Google Newsin uutisartikkeleiden suosittelujärjestelmään, joka yhdistää kaksi yhteistoiminnallisen suodattamisen tekniikkaa yhdeksi malliksi.}
 
 % The following can be used to specify keywords and classification of the paper:
 
-\keywords{suosittelujärjestelmät, yhteistoiminnallinen suodatus, sisältöpohjainen järjestelmä, Flickr, Netflix}
+\keywords{suosittelujärjestelmät, yhteistoiminnallinen suodatus, sisältöpohjainen järjestelmä, Flickr, Netflix, Google News, k-NN, Jaccardin kerroin}
 
 % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
 % This is probably mostly relevant for computer scientists
@@ -230,10 +230,11 @@ Realistisemmassa esimerkissä tulisi olla kriittinen sen suhteen, minkälaiset t
 \begin{displaymath}
 kuvailevuus(c) := \frac{k_d}{k_d + abs(k_d -log(|c|))}
 \end{displaymath}
-jossa $abs(x)$ palauttaa $x$:n absoluuttisen arvon ja $k_d$ on funktion parametri, joka määritellään kouluttamalla. Artikkelissa parametrin $k_d$ kouluttamiseen käytettiin 131 kuvan joukkoa. \textit{mieti, laitatko tuota funktiota ollenkaan, kun k:tä ei saa tyhjentävästi selitettyä}
+jossa $abs(x)$ palauttaa $x$:n absoluuttisen arvon ja $k_d$ on funktion parametri, joka määritellään kouluttamalla. Artikkelissa parametrin $k_d$ kouluttamiseen käytettiin 131 kuvan joukkoa ja suoritettiin parametrien pyyhkäisy (parameter-sweep).
+\textit{mieti, laitatko tuota funktiota ollenkaan, kun k:tä ei saa tyhjentävästi selitettyä}
 
-Tarkasteltavassa artikkelissa evaluoitiin kaikkia edellä esiteltyjä funktioita suurilla kuva- ja tunnistejoukoilla. Tuloksena todettiin edellä esitellyn suosittelustrategian tuottavan hyviä tuloksia. \cite{Sigurbjornsson:2008:FTR:1367497.1367542}
-We tuned our four strategies by performing a parameter-sweep and maximising system performance both in terms of MRR and P@5.
+Tarkasteltavassa artikkelissa evaluoitiin kaikkia edellä esiteltyjä funktioita suurilla kuva- ja tunnistejoukoilla. Lisäksi käytettiin toista koosteenmuodostusalgoritmia ja kuvailevuuden edistämisaskeleen lisäksi esiteltiin kolme muuta arvosanaa eri tavalla edistävää askelta. \cite{Sigurbjornsson:2008:FTR:1367497.1367542}
+
 
 
 \section{Yhteistoiminnallisen suodattamisen järjestelmät}
@@ -265,7 +266,7 @@ Joukkueen käyttämässä naapurustomallissa elokuvat jaotellaan pareihin, jotka
 
 	Piilomuuttujamallit tulevat apuun siinä, missä naapurustomallissa on puutteita. Kun naapurustomalli havaitsee vain samankaltaisten elokuvien suhteet, hahmottaa piilomuuttujamalli elokuvien väliset riippuvuudet kattavammin. Se pystyy esimerkiksi havaitsemaan saman lajityypin elokuvien olevan samankaltaisia keskenään. Toisin kuin naapurustomallit, se ei kuitenkaan huomioi pieniä, keskenään samankaltaisista elokuvista muodostuvia ryhmiä. Malli ei esimerkiksi pysty suosittelemaan trilogian ensimmäisen osan katsoneelle käyttäjälle sarjan toista osaa. Joukkueen käyttämän piilomuuttujamallin toiminta perustuu käyttäjästä ja elokuvasta muodostettaviin vektoreihin, joiden avulla saadaan ennuste käyttäjän arviolle elokuvasta.
         
-	Koren esittelee käytettyjen mallien teknistä puolta tarkemmin omassa artikkelissaan \cite{Koren:2008:FMN:1401890.1401944}. Naapurustomallia ei käytetty sellaisenaan, vaan sitä paranneltiin käyttötarkoitukseen sopivaksi. Pohjalla ollut, yleisesti käytössä oleva naapurustomalli,
+	Koren esittelee käytettyjen mallien teknistä puolta tarkemmin omassa artikkelissaan \cite{Koren:2008:FMN:1401890.1401944}. Tutustumme kahdesta esitellystä mallista lähemmin naapurustomalliin. Perinteistä naapurustomallia ei käytetty sellaisenaan, vaan sitä paranneltiin käyttötarkoitukseen sopivaksi. Pohjalla ollut, yleisesti käytössä oleva korrelaatioihin peustuva naapurustomalli,
 \begin{displaymath}
 \hat{r}_{ui} = b_{ui} + \frac{\sum_{j\in S^{k}(i;u)} s_{ij}(r_{uj}-b_{uj})}{\sum_{j \in S^{k} (i;u)}s_{ij} }
 \end{displaymath}         
@@ -277,13 +278,14 @@ antaa käyttäjän $u$ ennustetun arvion $r_{u_{i}}$ tuotteelle $i$. Mallissa
 \item Funktio $s_{ij}$ mittaa käyttäjien samankaltaisuutta $s_{ij} \stackrel{def}{=} \frac{n_{ij}}{n_{ij} + \lambda_2} p_{ij}$, jossa $n_{ij}$ on niiden käyttäjien lukumäärä, jotka arvostelivat tuotteet $i$ ja $j$. Tyypillinen arvo parametrille $\lambda_2$ on 100. Samankaltaisuuden mittaamisen pohjana on \textit{Pearson correlation coefficient} $p_{ij}$.
 \end{enumerate} 
 
-Tällaisenaan käytettynä malli ei kuitenkaan ole täysin ongelmaton. Ryhmä näki suurimpana ongelmana sen, että metodin toiminnalle ei ole olemassa formaalia perustelua \cite{Koren:2008:FMN:1401890.1401944}.
+Tällaisenaan käytettynä malli ei kuitenkaan ole täysin ongelmaton. Ryhmä näki suurimpana ongelmana sen, että metodin toiminnalle ei ole olemassa formaalia perustelua. Lisäksi samankaltaisuusmittauksen huomautettiin keskittyvän vain kahden tuotteen relaatioihin jättämällä näin huomiotta suhteet muuhun naapuristoon. Kolmanneksi todettiin, että interpolaatiopainojen summautuessa yhteen on mallin pakko nojautua naapureihin sellaisissakin tapauksissa, kun naapurustotietoa ei löydy, eli käyttäjä $u$ ei ole arvioinut tuotteen $i$ kanssa samanlaisia tuotteita. Tällöin olisi järkevämpää katsoa pohja-arviota naapuruuksien sijaan \cite{Koren:2008:FMN:1401890.1401944}.
 Ongelmat ratkaistiin päivitetyllä mallilla
 \begin{displaymath}
 \hat{r}_{ui} = b_{ui} + \sum_{j\in{S^{k}} (i;u)}\theta^{u}_{ij}(r_{uj}-b_{uj})
 \end{displaymath}
-jossa annetulle joukolle naapureita $S^{k}(i;u)$ lasketaan interpolaatiopainot $\theta^{u}_{ij}|j \in S^{k}(i;u)$.
+jossa annetulle joukolle naapureita $S^{k}(i;u)$ lasketaan interpolaatiopainot $\theta^{u}_{ij}|j \in S^{k}(i;u)$. Uudistettu malli tuotti testeissä huomattavasti parempia tuloksia kuin alkuperäinen naapurustomalli, kun $k$:n arvo oli vähintään 500 \cite{Koren:2008:FMN:1401890.1401944}.
         
+
         \textit{naapurustomallia ja piilomuuttujamallia käytettiin yhdistelmänä, tänne MITEN}
         
         Joukkue huomasi olevan oleellista katsoa dataa muutenkin kuin arvostelujen sisältöjen osalta. Laajemman kuvan saamiseksi joukkue keskittyi myös siihen, minkä tyyppisiä elokuvia käyttäjä ylipäätään vaivautuu arvostelemaan. Se, mikä elokuva on niin vaikuttava, että se kannattaa arvostella, opettaa paljon käyttäjästä. Jotkut mallit ottivat huomioon myös muun muassa arvostelujen määrän, keskiarvon ja päivämäärät.
