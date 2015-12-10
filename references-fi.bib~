@@ -6,6 +6,23 @@
   address = {Berliini},
   edition = {3.}
 }
+@article{Balabanovic:1997:FCC:245108.245124,
+ author = {Balabanovi\'{c}, Marko and Shoham, Yoav},
+ title = {Fab: Content-based, Collaborative Recommendation},
+ journal = {Commun. ACM},
+ issue_date = {March 1997},
+ volume = {40},
+ number = {3},
+ month = mar,
+ year = {1997},
+ issn = {0001-0782},
+ pages = {66--72},
+ numpages = {7},
+ doi = {10.1145/245108.245124},
+ acmid = {245124},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
 @book{Ullman,
  author = {Leskovec, Jure and Rajaraman, Anand and  Ullman, Jeffrey D.},
  title = {Mining of Massive Datasets},
@@ -116,11 +133,11 @@
  location = {Las Vegas, Nevada, USA},
  pages = {426--434},
  numpages = {9},
- url = {http://doi.acm.org/10.1145/1401890.1401944},
  doi = {10.1145/1401890.1401944},
  acmid = {1401944},
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {collaborative filtering, recommender systems},
 } 
+
 
