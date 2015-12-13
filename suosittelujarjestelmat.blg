@@ -7,15 +7,15 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty language in Ames:2007:WWT:1240624.1240772
 You've used 9 entries,
             2783 wiz_defined-function locations,
-            706 strings with 8016 characters,
-and the built_in function-call counts, 4357 in all, are:
-= -- 434
+            702 strings with 7964 characters,
+and the built_in function-call counts, 4325 in all, are:
+= -- 430
 > -- 125
 < -- 5
 + -- 49
 - -- 40
-* -- 441
-:= -- 589
+* -- 421
+:= -- 585
 add.period$ -- 23
 call.type$ -- 9
 change.case$ -- 47
@@ -24,13 +24,13 @@ cite$ -- 10
 duplicate$ -- 232
 empty$ -- 403
 format.name$ -- 67
-if$ -- 961
+if$ -- 957
 int.to.chr$ -- 0
 int.to.str$ -- 9
 missing$ -- 13
 newline$ -- 52
 num.names$ -- 18
-pop$ -- 57
+pop$ -- 61
 preamble$ -- 1
 purify$ -- 38
 quote$ -- 0
@@ -45,5 +45,5 @@ type$ -- 34
 warning$ -- 1
 while$ -- 39
 width$ -- 10
-write$ -- 125
+write$ -- 121
 (There was 1 warning)

@@ -21,8 +21,7 @@
   Media}}.
 \newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the SIGCHI Conference on
   Human Factors in Computing Systems}, CHI '07, \btxpageslong {}\ 971--980, New
-  York, NY, USA, 2007. \btxpublisherfont {ACM}\ifbtxprintISBN {,
-  \mbox{\btxISBN~\btxISBNfont {978-1-59593-593-9}}}.
+  York, NY, USA, 2007. \btxpublisherfont {ACM}.
 
 \bibitem {Balabanovic:1997:FCC:245108.245124}
 \btxnamefont {\btxlastnamefont {Balabanovi\'{c}}, Marko} \btxandlong {}\
@@ -30,8 +29,7 @@
   {\btxifchangecase {Fab: Content-based, collaborative recommendation}{Fab:
   Content-based, Collaborative Recommendation}}.
 \newblock \btxjournalfont {Commun. ACM}, 40(3):66--72,
-  \btxprintmonthyear{.}{3}{1997}{long}\ifbtxprintISSN {,
-  \mbox{\btxISSN~\btxISSNfont {0001-0782}}}.
+  \btxprintmonthyear{.}{3}{1997}{long}.
 
 \bibitem {Bell:2007:LNP:1345448.1345465}
 \btxnamefont {\btxlastnamefont {Bell}, Robert\btxfnamespacelong M.} \btxandlong
@@ -46,8 +44,7 @@
   {\btxifchangecase {Hybrid recommender systems: Survey and experiments}{Hybrid
   Recommender Systems: Survey and Experiments}}.
 \newblock \btxjournalfont {User Modeling and User-Adapted Interaction},
-  12(4):331--370, \btxprintmonthyear{.}{11}{2002}{long}\ifbtxprintISSN {,
-  \mbox{\btxISSN~\btxISSNfont {0924-1868}}}.
+  12(4):331--370, \btxprintmonthyear{.}{11}{2002}{long}.
 
 \bibitem {Das:2007:GNP:1242572.1242610}
 \btxnamefont {\btxlastnamefont {Das}, Abhinandan\btxfnamespacelong S.},
@@ -79,8 +76,7 @@
   Multifaceted Collaborative Filtering Model}}.
 \newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the 14th ACM SIGKDD
   International Conference on Knowledge Discovery and Data Mining}, KDD '08,
-  \btxpageslong {}\ 426--434, New York, NY, USA, 2008. \btxpublisherfont
-  {ACM}\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {978-1-60558-193-4}}}.
+  \btxpageslong {}\ 426--434, New York, NY, USA, 2008. \btxpublisherfont {ACM}.
 
 \bibitem {Ullman}
 \btxnamefont {\btxlastnamefont {Leskovec}, Jure}, \btxnamefont
