@@ -74,16 +74,16 @@
 % The following commands define the information used to generate title and
 % abstract pages. The following entries should be always specified:
 
-\title{Yhteistoiminnalliset ja sisältöpohjaiset suosittelujärjestelmät}
+\title{Katsaus suosittelujärjestelmiin - sisältöpohjaiset ja yhteistoiminnallisen suodattamisen järjestelmät}
 \author{Johanna Wahtera}
 \date{\today}
 \level{Kandidaatintutkielma}
-\abstract{Aineessa tutustutaan sekä sisältöpohjaiseen että yhteistoiminnalliseen suodattamiseen perustuvien suosittelujärjestelmien toimintaan yleisellä tasolla. Aineesta selviää, mikä on näiden kahden suosittelujärjestelmätyypin oleellisin ero.
-Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohjaisen suosittelun tapauksessa Flickr-kuvapalvelun tunnisteiden suosittelu käyttäjille. Yhteistoiminnallista suosittelua avataan esittelemällä Netflix Prize -kilpailuun osallistuneen joukkueen suosittelujärjestelmää. Tutustumme myös Google Newsin uutisartikkeleiden suosittelujärjestelmään, joka yhdistää kaksi yhteistoiminnallisen suodattamisen tekniikkaa yhdeksi malliksi.}
+\abstract{Tutkielmassa tutustutaan sekä sisältöpohjaisten että yhteistoiminnalliseen suodattamiseen perustuvien suosittelujärjestelmien toimintaan yleisellä tasolla. Tutkielmassa selviää, mikä on näiden kahden suosittelujärjestelmätyypin oleellisin ero.
+Kumpaankin järjestelmätyyppiin syvennytään esimerkkien kautta. Sisältöpohjaisen suosittelun kohdalla esitellään Flickr-kuvapalvelun tunnisteiden suosittelua käyttäjille. Yhteistoiminnallista suosittelua avataan esittelemällä Netflix Prize -kilpailuun osallistuneen joukkueen elokuvien suosittelujärjestelmää. Lisäksi tutustumme Google Newsin uutisartikkeleiden suosittelujärjestelmään, joka yhdistää kaksi yhteistoiminnallisen suodattamisen tekniikkaa yhdeksi malliksi. Esimerkkien kautta selviää myös, minkätyyppisissä palveluissa suosittelujärjestelmiä yleisesti käytetään.}
 
 % The following can be used to specify keywords and classification of the paper:
 
-\keywords{suosittelujärjestelmät, yhteistoiminnallinen suodatus, sisältöpohjainen järjestelmä, Flickr, Netflix, Google News}
+\keywords{suosittelujärjestelmät, yhteistoiminnallinen suodatus, sisältöpohjaisuus, Flickr, Netflix, Google News}
 
 % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
 % This is probably mostly relevant for computer scientists
@@ -128,16 +128,18 @@ Kummastakin järjestelmätyypistä esitellään esimerkki, joka on sisältöpohj
 
 
 \section{Johdanto}
-         Internetissä on valtava määrä monimuotoista sisältöä. Verkkoa selaava käyttäjä löytää niin tuotteita, artikkeleita kuin sivustoja lähes loputtomasti. Rajattomien mahdollisuuksien edessä käyttäjän voi kuitenkin olla vaikeaa löytää jotakin juuri häntä kiinnostavaa. Suuren verkkokaupan laajaa valikoimaa ei voida asettaa kerralla käyttäjän näkyville samalla tavoin kuin perinteisessä kivijalkakaupassa. Sama haaste tulee vastaan kaikenlaisia tuotteita, kuten musiikkia, elokuvia tai artikkeleita selatessa. Hakukoneet ratkaisevat ongelman osittain löytämällä suuresta määrästä tietoa juuri sen, mitä käyttäjä etsii. On kuitenkin tapauksia, joissa käyttäjä ei \textit{tiedä} mitä hän haluaa löytää. On syntynyt tarve henkilökohtaisille kulutussuosituksille.
+         Internetissä on valtava määrä monimuotoista sisältöä. Verkon käyttäjällä ei ole puutetta selattavista tuotteista, artikkeleista, keskustelupalstoista tai muusta internetin tarjoamasta sisällöstä. Rajattomien mahdollisuuksien edessä käyttäjän voi kuitenkin olla vaikeaa löytää jotakin juuri häntä kiinnostavaa. Suuren verkkokaupan laajaa valikoimaa ei voida asettaa kerralla käyttäjän näkyville samalla tavoin kuin perinteisessä kivijalkakaupassa.
+         
+Tämä tarjonnan esittelemisen haaste tulee vastaan kaikenlaisia tuotteita, kuten musiikkia, elokuvia tai artikkeleita selatessa. Hakukoneet ratkaisevat ongelman osittain löytämällä suuresta määrästä tietoa juuri sen, mitä käyttäjä etsii. On kuitenkin tapauksia, joissa käyttäjä ei \textit{tiedä} mitä hän haluaa löytää. Tässä kuvaan astuu henkilökohtaisia kulutussuosituksia tarjoavat järjestelmät eli suosittelujärjestelmät.
         
 Suosittelujärjestelmä valikoi käyttäjän puolesta tuotteita, joita tarjotaan hänelle kulutettavaksi. Järjestelmä kerää dataa käyttäjästä ja/tai tarjolla olevista tuotteista ja muodostaa datan perusteella suosituksia tuotteista, joita käyttäjä todennäköisesti pitäisi kiinnostavana.
 
-Suosittelujärjestelmän toteutustavat voidaan jakaa kahteen laajempaan ryhmään: sisältöpohjaisiin (content-based) ja yhteistoiminnallisen suodattamisen (collaborative filtering) järjestelmiin \cite{Balabanovic:1997:FCC:245108.245124}.
+Suosittelujärjestelmän toteutustavat voidaan jakaa kahteen laajempaan ryhmään: sisältöpohjaisiin (content-based) ja yhteistoiminnallisen suodattamisen (collaborative filtering) järjestelmiin \cite{Balabanovic:1997:FCC:245108.245124}\cite{Ullman}.
 Tässä aineessa keskitymme näiden järjestelmien eroihin ja tutustumme muutamaan esimerkkijärjestelmään.
 
         Sisältöpohjaisissa järjestelmissä kerätään tietoa palvelun tuotteista ja vertaillaan näitä toisiinsa. Käyttäjälle suositellaan uusia tuotteita sen perusteella, minkälaisia tuotteita hän on menneisyydessä selannut tai hankkinut. Tuotteen merkittävät piirteet kartoitetaan tuoteprofiiliin ja profiilia verrataan toisen tuotteen profiiliin. Tavoitteena on löytää mahdollisimman samankaltaisia profiileja. Tuote voi olla tässä yhteydessä mitä vain käyttäjälle suositeltavaa sisältöä, kuten elokuva tai uutisartikkeli. Elokuvan tapauksessa tuoteprofiiliin merkittäisiin esimerkiksi elokuvan näyttelijät, ohjaaja, valmistusvuosi ja lajityyppi. 
         
-        Yhteistoiminnallisen suodattamisen järjestelmät keskittyvät yksittäisen käyttäjän ja tuotteiden ominaisuuksien lisäksi käyttäjäyhteisön välisiin relaatioihin. Käyttäjät lajitellaan samankaltaisiksi heidän antamiensa arvosteluiden perusteella. Samanlaisista asioista pitävät käyttäjät muodostavat oman aliryhmänsä koko käyttäjäyhteisöstä. Tuotteiden samankaltaisuus määritellään vertailemalla useamman samankaltaisen käyttäjän arvosteluja.
+        Yhteistoiminnallisen suodattamisen järjestelmät keskittyvät yksittäisen käyttäjän ja tuotteiden ominaisuuksien lisäksi käyttäjäyhteisön välisiin relaatioihin. Käyttäjät lajitellaan samankaltaisiksi heidän selaushistoriansa tai antamiensa arvosteluiden perusteella. Samanlaisista asioista pitävät käyttäjät muodostavat oman aliryhmänsä koko käyttäjäyhteisöstä. Tuotteiden suositeltavuus määritellään vertailemalla useamman samankaltaisen käyttäjän tuotearvosteluja tai selaustietoja. Jos yksi käyttäjä pitää tietystä tuotteesta, voidaan sitä suositella muillekin samankaltaisille käyttäjille.
         
         Sekä yhteistoiminnalliseen suodattamiseen perustuvat että sisältöpohjaiset suosittelujärjestelmät vaativat toimiakseen tietoa käyttäjän mieltymyksistä. Käyttäjien mielipiteitä kerätään usein suoraan arvosteluiden kautta, mutta toisinaan preferenssit päätellään käyttäjän käyttäytymisestä muin keinoin, kuten esimerkiksi klikkaushistorian perusteella \cite{Das:2007:GNP:1242572.1242610}.
         
@@ -150,11 +152,11 @@ Jokaiselle tuotteelle muodostetaan tuoteprofiili, johon kerätään tuotteen tä
 
 Profiilien samankaltaisuus määräytyy pitkälti sen perusteella, kuinka paljon samoja luokituksia ja oleellisia sanoja niissä esiintyy. Eräs tähän soveltuvista menetelmistä on Jaccardin kerroin (Jaccard coefficient tai Jaccard index) johon palataan seuraavassa kappaleessa.
 
-Tuoteprofiilin lisäksi myös käyttäjästä rakennetaan käyttäjäprofiili. Käyttäjäprofiili rakentuu samoista osista kuin tuoteprofiili, mutta tuotetiedon paikalle merkitään käyttäjän mieltymys kyseisen tiedon suhteen. Esimerkki tällaisesta tiedosta voisi olla vaikkapa elokuvan lajityyppi, jolloin toiminnasta pitävän käyttäjän profiiliin merkitään lajityypin kohdalle "toiminta".
+Tuoteprofiilin lisäksi myös käyttäjästä rakennetaan käyttäjäprofiili. Käyttäjäprofiili rakentuu samoista osista kuin tuoteprofiili, mutta tuotetiedon paikalle merkitään käyttäjän mieltymys kyseisen tiedon suhteen. Mieltymyksellä tarkoitetaan tässä käyttäjän historiasta opittua tietoa siitä, minkätyyppistä sisältöä käyttäjä vaikuttaa kuluttavan paljon. Esimerkki käyttäjäprofiilin tiedosta voisi olla vaikkapa elokuvan lajityyppi, jolloin paljon toimintasisältöisiä elokuvia katsovan käyttäjän profiiliin merkittäisiin lajityypin kohdalle \textit{toiminta}. Kaikissa järjestelmissä käyttäjästä ei luoda konkreettista profiilia, vaan raaka selaushistoria toimii riittävänä kuvauksena käyttäjästä.
 
-Joidenkin tuotteiden ominaisuuksia on vaikea vertailla keskenään. Esimerkiksi kuvista on mahdollista saada vain rajallinen määrä suositusjärjestelmän kannalta oleellista tietoa. Tällaisissa tapauksissa järjestelmässä onkin usein käytössä tuotteiden tunnistetoiminto (tags), jossa tuotteiden ominaisuuksia merkitään sanallisin tunnuksin.
+Suosittelu on helppo perustaa tuotteen ominaisuuksille, jos tuotteen sisältö on helposti selvitettävissä, kuten esimerkiksi tekstimuodossa. On kuitenkin tapauksia, joissa tuotteen sisältöä on hankala määritellä ja vertailla toisiin tuotteisiin. Esimerkiksi kuvista on mahdollista saada vain rajallinen määrä suositusjärjestelmän kannalta oleellista tietoa. Yksi mahdollinen ratkaisu on lisätä tuotteisiin tietoa niiden sisällöstä sanallisesti. Esimerkki tällaisesta toiminnosta on monissa kuvapalveluissa käytössä oleva tunnisteiden (tags), eli sanallisten kuvauksien, merkitseminen tuotteisiin.
 
-Kun vastuu merkitsemisestä on käyttäjällä, voivat tunnisteet jäädä epäselviksi ja niiden määrä vaihdella suurestikin. Käyttäjien välillä ei myöskään välttämättä vallitse yhtenevä mielipide oikeanlaisesta tunnistetyylistä. Kaksi eri käyttäjää saattaakin merkitä samanlaisen kuvan täysin toisistaan poikkeavilla tunnisteilla. Ratkaisua tähän ongelmaan käydään läpi seuraavassa kappaleessa, joka toimii myös esimerkkinä sisältöpohjaisesta suosittelujärjestelmästä.
+Tunnisteet ovat onnistuessaan hyvä tapa merkitä tuotteiden ominaisuuksia. Hyödyllinen tunnistejärjestelmä tarvitsee kuitenkin jonkinlaisen säännön siitä, millaisilla tunnisteilla minkäkinlainen tuote merkitään. Jos vastuu merkitsemisestä on yksittäisillä käyttäjillä, voivat tunnisteet jäädä epäselviksi ja niiden määrä vaihdella suurestikin \cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Käyttäjien välillä ei myöskään välttämättä vallitse yhtenevä mielipide oikeanlaisesta tunnistetyylistä. Kaksi eri käyttäjää saattaakin merkitä samanlaisen kuvan täysin toisistaan poikkeavilla tunnisteilla. Ratkaisua tähän ongelmaan käydään läpi seuraavassa kappaleessa, joka toimii myös esimerkkinä sisältöpohjaisesta suosittelujärjestelmästä.
 
 
 \subsection{Tunnisteiden suosittelu käyttäjille yhteisötiedon perusteella}
@@ -187,7 +189,7 @@ P (t_{j} | t_{i}):= \frac{|K(t_{i}) \cap K(t_{j})|} {|K(t_{i})|}
 \end{displaymath}
 mukaisesti. Tässä $P(t_{j}|t_{i})$ kertoo, millä todennäköisyydellä kuvassa, joka on merkitty tunnisteella $t_{i}$, on myös tunniste $t_{j}$.
 
-Symmetrinen normalisointi tuottaa tunnisteelle hyvin samankaltaisia tunnistesuosituksia~\cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Esimerkiksi tunnisteen \textit{Eiffel Tower} tapauksessa suurimman yhteisesiintymisluvun saavat sanat \textit{Tour Eiffel, Eiffel, Seine, La Tour Eiffel} ja \textit{Paris}. Epäsymmetrisellä mittauksella saman sanan tulokset ovat \textit{Paris, France, Tour Eiffel, Eiffel} ja \textit{Europe}. Nähdään, että epäsymmetrisellä yhteisesiintymisellä löydetään monipuolisempia suositeltavia tunnisteita.
+Symmetrinen normalisointi tuottaa tunnisteelle suosituksena useita samaa merkitseviä sanoja  tai kuvan kohteen lähimaastossa sijaitsevia kohteita~\cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Esimerkiksi tunnisteen \textit{Eiffel Tower} tapauksessa suurimman yhteisesiintymisluvun saavat sanat \textit{Tour Eiffel, Eiffel, Seine, La Tour Eiffel} ja \textit{Paris}. Epäsymmetrisellä mittauksella saman sanan tulokset ovat \textit{Paris, France, Tour Eiffel, Eiffel} ja \textit{Europe}. Voidaankin olettaa, että epäsymmetrisellä yhteisesiintymisellä löydetään monipuolisempia suositeltavia tunnisteita.
 
 \begin{figure}[]
 \includegraphics[width = 420pt]{tunnisteidensuosittelu.eps}\caption{Tunnistesuosituksen muodostaminen.}
@@ -214,11 +216,13 @@ mukaisesti, jossa $1_{c\in C_u}$ saa arvon 1 jos $c\in C_u$ ja arvon 0 muuten. F
 \includegraphics[width = 390pt]{tunnisteet.eps}\caption{Esimerkin tunnisteiden jakautuminen kuvitteellisessa datassa.}
 \label{esimerkkitunnisteet}
 \end{figure}
-\begin{figure}[]
-\includegraphics[width = 330pt]{uudetvennit.eps}\caption{Tarkasteltavien tunnisteiden yhteisesiintyminen.}
+
+Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta: \textit{Talvi} (500), \textit{Lumi} (200) ja \textit{Syöminen} (3000). Kuvasta \ref{esimerkkitunnisteet} nähdään näiden tunnisteiden esiintymismäärät suhteessa toisiinsa. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}.
+\begin{figure}[h]
+\centerline{\includegraphics[width = 360pt]{uudetvennit.eps}}\caption{Tarkasteltavien tunnisteiden yhteisesiintyminen.}
 \label{vennit}
 \end{figure}
-Havainnollistetaan seuraavaksi tunnisteiden suosittelua esimerkillä. Tarkastellaan kolmea eri tunnistetta: \textit{Talvi} (500), \textit{Lumi} (200) ja \textit{Syöminen} (3000). Kuvasta \ref{esimerkkitunnisteet} nähdään näiden tunnisteiden esiintymismäärät suhteessa toisiinsa. Tarkastellaan tilannetta jossa käyttäjä merkitsee kuvansa tunnisteella \textit{Talvi}. Oletetaan, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tämä näkyy kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
+Oletetaan, että tunnisteet \textit{Talvi} ja \textit{Lumi} esiintyvät muissa kuvissa yhdessä 150 kertaa ja tunnisteet \textit{Talvi} ja \textit{Syöminen} 45. Tätä tunnisteiden yhteisesiintyvyyttä havainnollistetaan kuvassa \ref{vennit}. Vertaillaan ensin tunnisteiden \textit{Talvi} ja \textit{Lumi} yhteisesiintyvyyttä kaavalla 
 \begin{displaymath} 
 P (Lumi | Talvi):= \frac{|K(Talvi) \cap K(Lumi)|} {|K(Talvi)|}
 \end{displaymath}
@@ -259,9 +263,9 @@ Yleinen tapa toteuttaa yhteistoiminnallisen suodattamisen suosittelujärjestelm�
 
         Suosittelujärjestelmät nousivat suuremman yleisön puheenaiheeksi digitaalisen elokuvavuokraamo Netflixin vuonna 2006 järjestämän Netflix Prize -kilpailun ansiosta. Kilpailun tarkoituksena oli parantaa Netflixin käyttämää suosittelujärjestelmää ja pienentää annetun testidatan keskineliöpoikkeamaa 10 prosentilla. Testidata koostui yli 100 miljoonasta elokuva-arvostelusta noin 480 000 käyttäjältä 17 770 eri elokuvasta. Bell ja Koren käsittelevät artikkelissaan \cite{Bell:2007:LNP:1345448.1345465} tässä kilpailussa vuoden sisällä parhaiten pärjänneen joukkueen suosittelujärjestelmämallia, joka saavutti 8,43 \%:n parannuksen.
         
-        Huomattavaa joukkueen käyttämässä mallissa oli se, että se käytti kahden tärkeimmän yhteistoiminnallisen suodattamisen mallityypin yhdistelmää. Kummassakin mallissa on omat puutteensa, mutta yhdessä ne tuottivat hyviä tuloksia.
+        Huomattavaa joukkueen käyttämässä mallissa oli se, että se käytti kahden tärkeimmän yhteistoiminnallisen suodattamisen mallityypin yhdistelmää. Kummassakin mallissa on omat puutteensa, mutta yhdessä ne tuottivat hyviä tuloksia. Kappaleessa 3 esitellyn jaon mukaan toinen käytetyistä menetelmistä voidaan luokitella muistipohjaisiin ja toinen mallipohjaisiin algoritmeihin.
         
-        Toinen näistä malleista on naapurustomalli (Neighborhood model, k-NN), joka on hyvä havaitsemaan paikallisia riippuvuuksia. Mallilla tarkastellaan kunkin alkion k:ta lähintä naapuria ja luokitellaan käsiteltävä alkio siihen ryhmään, jonka jäseniä on tarkasteltavissa naapureissa eniten. Kuvassa \ref{knn} on havainnollistettu naapurustomallin toimintaa. Mallilla koko tarkasteltava joukko saadaan jaettua pienempiin ryhmiin.
+        Muistipohjaisena toimii naapurustomalli (Neighborhood model, k-NN), joka on hyvä havaitsemaan paikallisia riippuvuuksia. Mallilla tarkastellaan kunkin alkion k:ta lähintä naapuria ja luokitellaan käsiteltävä alkio siihen ryhmään, jonka jäseniä on tarkasteltavissa naapureissa eniten. Kuvassa \ref{knn} on havainnollistettu naapurustomallin toimintaa. Mallilla koko tarkasteltava joukko saadaan jaettua pienempiin ryhmiin.
         
 \begin{figure}[]
 \includegraphics[width = 370pt]{knnkumpikin.eps}\caption{Naapurustomallin (k-NN) perusperiaate. Valitaan violetin yksilön k lähintä naapuria (tässä k = 3). Koska näissä naapureissa on enemmän sinisiä naapureita, luokitellaan violetti sinisten joukkoon.}
@@ -323,7 +327,7 @@ Google asettaa tarkkoja vaatimuksia palveluidensa vasteajoille myös Google News
 
 Kappaleessa 3.1 esiteltiin jako malli- ja muistipohjaisiin yhteistoiminnallisen suodattamisen järjestelmiin. Artikkelissa käsiteltävässä järjestelmässä käytettiin niin sanottua hybridimallia, eli sekoitusta kummankin tyyppisestä järjestelmästä.
 
-Muistipohjaisena algoritmina toimii Covisitation, jota esitellään tarkemmin jäljempänä. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (probabilistic latent semantic indexing) ja MinHash. Kaikki nämä kolme algoritmia asettavat tarkasteltaville uutisartikkeleille arvosanat siten, että paremmat suositukset saavat korkeamman numeerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään painottaen kaavalla
+Muistipohjaisena algoritmina toimii Covisitation, jota esitellään tarkemmin jäljempänä. Mallipohjaisessa lähestymisessä käytetään kahta klusterointitekniikkaa, algoritmeja PLSI (todennäköisyyspohjainen piilosemanttinen indeksointi) ja MinHash. Kaikki nämä kolme algoritmia asettavat tarkasteltaville uutisartikkeleille arvosanat siten, että paremmat suositukset saavat korkeamman numeerisen arvon. Lopussa kaikki kolme arvosanaa yhdistetään painottaen kaavalla
 \begin{displaymath}
 \sum_a{w_a r^{(a)}_{s}}
 \end{displaymath}
@@ -344,7 +348,7 @@ p(s|u;\theta)= \sum_{z \in Z} {p(z|u)}{p(s|z)}
 kun $\theta$ on todennäköisyysjakauman parametrit sisältävä vektori.
 
 \begin{figure}[]
-\includegraphics[width = 390pt]{verkko.eps}\caption{Uutisartikkelit verkkona, jossa painoina kanssavierailujen lukumäärät.}
+\includegraphics[width = 400pt]{verkkouusitaas.eps}\caption{Uutisartikkelit verkkona, jossa painoina kanssavierailujen lukumäärät.}
 \label{verkko}
 \end{figure} 
 
@@ -354,14 +358,21 @@ Verkkoa käsitellään vierekkäisyyslistana, jonka avaimina on artikkeli-id:t.
 Kun havaitaan käyttäjän $u_i$ klikkaavan artikkelia $s_k$, käydään läpi kyseisen käyttäjän klikkaushistoria $C_{u_{i}}$. Jokaisen artikkelin $s_k \in C_{u_{i}}$ kohdalla muokataan sekä $s_j$ ja $s_k$ vierekkäisyyslistoja lisäämällä niihin kyseiseen klikkaukseen viittaava uusi merkintä. Jos kyseiselle parille on jo olemassa merkintä, päivitetään verkon painoja siten, että vanhojen kanssavierailujen merkitys vähenee ajan mittaan.
 
 \section{Pohdinta}
-mitä kuvista voi päätellä tunnistetietoihin, eri tunnistemenetelmät mitä ei käyty
 
-Ehkäpä täällä voisi olla vaikka kappalekohtaista pohdintaa. Esim jotain tägeistä, jotain ihmisten elokuvamausta jne. Ja sitten jotain yleistä, jos jotain keksii... Ehkä, tai sitten koko pohdinta pois.
+Suosittelujärjestelmiä käytetään runsaasti kaikenlaisia tuotteita tarjoavissa palveluissa. Esimerkiksi kappaleessa 2.2 esitellyn Flickr-kuvapalvelun tunnisteiden suosittelussa tulee esille ikään kuin kahden kerroksen suosittelua. Ensimmäisellä kerroksella käyttäjille suositellaan tunnisteita, jotka sopivat heidän kuviinsa. Näitä hyviä tunnisteita käyttämällä mahdollistuu toinen suosittelukerros, eli kuvien suositteleminen niitä selaaville käyttäjille. Palvelu voi suositella käyttäjille heitä kiinnostavia kuvia käyttämällä joko sisältöpohjaista tai yhteistoiminnallista suosittelujärjestelmää, mutta emme perehtyneet tähän "ylempään kerrokseen" tarkemmin.
+
+Kappaleessa 2 mainittiin tunnisteiden käytön olevan hyvä keino kerätä tietoa kuvan kaltaisista tuotteista, joista on muuten saatavissa vain vähän tietoa. Mainittakoot kuitenkin, että on olemassa erilaisia tapoja analysoida kuvien sisältöä ilman tunnisteita \cite{Sigurbjornsson:2008:FTR:1367497.1367542}. Voitaisiinkin ajatella olevan mahdollista perustaa tunnisteiden suosittelu näille tiedoille yhteisötiedon sijaan.
+
+mitä kuvista voi päätellä tunnistetietoihin, eri tunnistemenetelmät mitä ei käyty
 
         
 \section{Yhteenveto}
 
-Suosittelujärjestelmiä tarvitaan monessa eri kontekstissa. Esimerkkini sisältöpohjaisen suodattamisen suosittelujärjestelmästä on hyvälaatuisten tunnisteiden suosittelu käyttäjille. Tässä tulee esille ikään kuin kahden kerroksen suosittelua. Ensin käyttäjille suositellaan tunnisteita, jotka sopivat heidän kuviinsa. Näitä hyviä tunnisteita käyttämällä mahdollistuu toinen suositteluominaisuus, eli kuvien suositteleminen niitä selaaville käyttäjille. Palvelu voi suositella käyttäjille heitä kiinnostavia kuvia käyttämällä joko sisältöpohjaista tai yhteistoiminnallista suosittelujärjestelmää.
+Suosittelujärjestelmiä käytetään muun muassa kuva- elokuva- ja uutisartikkelipalveluissa. Järjestelmät voidaan jakaa sisältöpohjaisiin tai yhteistoiminnallisen suodattamisen järjestelmiin sen perusteella, tarkastellaanko vain käyttäjän omaa osto-, arvostelu- tai selaushistoriaa vai myös muiden käyttäjien vastaavia historioita.
+
+Sisältöpohjainen suosittelu perustuu yhden käyttäjän historiatietoihin ja tuotteiden vertailuun keskenään. Esimerkkinä sisältöpohjaisen suodattamisen suosittelujärjestelmästä esiteltiin hyödyllisten tunnisteiden suosittelu käyttäjille.
+ 
+Yhteistoiminnalliseen suodattamiseen perustuvassa suosittelussa keskitytään käyttäjäyhteisön välisiin relaatioihin. Samoja tuotteita kuluttaneiden käyttäjien oletetaan pitävän myös sellaisista tuotteista, joita vain toinen heistä on kuluttanut. 
 
 Sisältöpohjaisen ja yhteistoiminnallisen suosittelujärjestelmän ero on pohjimmiltaan siinä, käytetäänkö suositteluun vain yhden käyttäjän vai koko käyttäjäyhteisön mieltymyksiä. Tehokkaimmat tulokset näytettäisiin saavan käyttämällä useamman kuin yhden suosittelumallin yhdistelmää ~\cite{Bell:2007:LNP:1345448.1345465}.
 

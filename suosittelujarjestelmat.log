@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.29)  10 DEC 2015 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.29)  13 DEC 2015 11:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -804,6 +804,12 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 120.
 
 \sideindent=\skip55
 \lowerspace=\skip56
+
+Overfull \hbox (1.79323pt too wide) in paragraph at lines 120--120
+\T1/lmr/bx/n/17.28 ja yh-teis-toi-min-nal-li-sen suo-dat-ta-mi-sen jär-jes-tel-
+mät 
+ []
+
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 120.
 [1
@@ -906,42 +912,42 @@ Package babel Info: Redefining finnish shorthand "|
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 143.
  [1
 
 ]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 144.
-Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 146.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language  on input line 156.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 156.
 
 [2]
-Overfull \hbox (5.46466pt too wide) in paragraph at lines 160--160
+Overfull \hbox (5.46466pt too wide) in paragraph at lines 162--162
 []\T1/lmr/bx/n/14.4 Tunnisteiden suo-sit-te-lu käyt-tä-jil-le yh-tei-sö-tie-don
  pe-
  []
 
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 160.
+(babel)             in language  on input line 162.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 171.
+(babel)             in language  on input line 167.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 171.
+(babel)             in language  on input line 167.
 [3]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 189.
+(babel)             in language  on input line 181.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 189.
+(babel)             in language  on input line 181.
  [4]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 192.
+               Default added (so using `tbp') on input line 194.
 
 Package epstopdf Info: Source file: <tunnisteidensuosittelu.eps>
 (epstopdf)                    date: 2015-11-25 22:39:49
@@ -952,29 +958,29 @@ f>
 (epstopdf)                    size: 54979 bytes
 (epstopdf)             Command: <repstopdf --outfile=tunnisteidensuosittelu-eps
 -converted-to.pdf tunnisteidensuosittelu.eps>
-(epstopdf)             \includegraphics on input line 193.
+(epstopdf)             \includegraphics on input line 195.
 Package epstopdf Info: Output file is already uptodate.
 
-<tunnisteidensuosittelu-eps-converted-to.pdf, id=114, 2169.10374pt x 763.85374p
+<tunnisteidensuosittelu-eps-converted-to.pdf, id=112, 2169.10374pt x 763.85374p
 t>
 File: tunnisteidensuosittelu-eps-converted-to.pdf Graphic file (type pdf)
  <use tunnisteidensuosittelu-eps-converted-to.pdf>
 Package pdftex.def Info: tunnisteidensuosittelu-eps-converted-to.pdf used on in
-put line 193.
+put line 195.
 (pdftex.def)             Requested size: 420.0pt x 147.89606pt.
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 193--193
+Overfull \hbox (30.0pt too wide) in paragraph at lines 195--195
 [][] 
  []
 
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 208.
+(babel)             in language  on input line 206.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 208.
-[5 <./tunnisteidensuosittelu-eps-converted-to.pdf>]
+(babel)             in language  on input line 206.
+[5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 213.
+               Default added (so using `tbp') on input line 215.
 
 Package epstopdf Info: Source file: <tunnisteet.eps>
 (epstopdf)                    date: 2015-12-07 12:32:20
@@ -984,20 +990,15 @@ Package epstopdf Info: Source file: <tunnisteet.eps>
 (epstopdf)                    size: 9328 bytes
 (epstopdf)             Command: <repstopdf --outfile=tunnisteet-eps-converted-t
 o.pdf tunnisteet.eps>
-(epstopdf)             \includegraphics on input line 214.
+(epstopdf)             \includegraphics on input line 216.
 Package epstopdf Info: Output file is already uptodate.
-<tunnisteet-eps-converted-to.pdf, id=128, 603.25375pt x 347.2975pt>
+<tunnisteet-eps-converted-to.pdf, id=125, 603.25375pt x 347.2975pt>
 File: tunnisteet-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tunnisteet-eps-converted-to.pdf>
-Package pdftex.def Info: tunnisteet-eps-converted-to.pdf used on input line 214
+Package pdftex.def Info: tunnisteet-eps-converted-to.pdf used on input line 216
 .
 (pdftex.def)             Requested size: 390.0pt x 224.52185pt.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 217.
-
 Package epstopdf Info: Source file: <uudetvennit.eps>
 (epstopdf)                    date: 2015-12-07 12:57:47
 (epstopdf)                    size: 113482 bytes
@@ -1006,34 +1007,38 @@ Package epstopdf Info: Source file: <uudetvennit.eps>
 (epstopdf)                    size: 65963 bytes
 (epstopdf)             Command: <repstopdf --outfile=uudetvennit-eps-converted-
 to.pdf uudetvennit.eps>
-(epstopdf)             \includegraphics on input line 218.
+(epstopdf)             \includegraphics on input line 222.
 Package epstopdf Info: Output file is already uptodate.
-<uudetvennit-eps-converted-to.pdf, id=129, 1004.75375pt x 719.68875pt>
+
+<uudetvennit-eps-converted-to.pdf, id=127, 1004.75375pt x 719.68875pt>
 File: uudetvennit-eps-converted-to.pdf Graphic file (type pdf)
 
 <use uudetvennit-eps-converted-to.pdf>
-Package pdftex.def Info: uudetvennit-eps-converted-to.pdf used on input line 21
-8.
-(pdftex.def)             Requested size: 330.0pt x 236.36691pt.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 224.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 224.
- [6 <./tunnisteet-eps-converted-to.pdf>]
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 231.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 231.
+Package pdftex.def Info: uudetvennit-eps-converted-to.pdf used on input line 22
+2.
+(pdftex.def)             Requested size: 360.0pt x 257.85782pt.
 
-[7 <./uudetvennit-eps-converted-to.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 240.
+(babel)             in language  on input line 226.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 241.
+(babel)             in language  on input line 226.
+[6 <./tunnisteidensuosittelu-eps-converted-to.pdf>]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 235.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 235.
+ [7 <./tunnisteet-eps-converted-to.pdf>]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 244.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 245.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 242.
+               Default added (so using `tbp') on input line 246.
 
 Package epstopdf Info: Source file: <yhteistoiminnallinen.eps>
 (epstopdf)                    date: 2015-12-09 16:32:42
@@ -1044,37 +1049,41 @@ Package epstopdf Info: Source file: <yhteistoiminnallinen.eps>
 (epstopdf)                    size: 25716 bytes
 (epstopdf)             Command: <repstopdf --outfile=yhteistoiminnallinen-eps-c
 onverted-to.pdf yhteistoiminnallinen.eps>
-(epstopdf)             \includegraphics on input line 243.
+(epstopdf)             \includegraphics on input line 247.
 Package epstopdf Info: Output file is already uptodate.
 
-<yhteistoiminnallinen-eps-converted-to.pdf, id=152, 964.60374pt x 549.05125pt>
+<yhteistoiminnallinen-eps-converted-to.pdf, id=151, 964.60374pt x 549.05125pt>
 File: yhteistoiminnallinen-eps-converted-to.pdf Graphic file (type pdf)
 
 <use yhteistoiminnallinen-eps-converted-to.pdf>
 Package pdftex.def Info: yhteistoiminnallinen-eps-converted-to.pdf used on inpu
-t line 243.
+t line 247.
 (pdftex.def)             Requested size: 400.0pt x 227.67609pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 243--243
+Overfull \hbox (10.0pt too wide) in paragraph at lines 247--247
 [][] 
  []
 
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 251.
+(babel)             in language  on input line 249.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 251.
-[8]
+(babel)             in language  on input line 249.
+[8 <./uudetvennit-eps-converted-to.pdf>]
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 255.
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 255.
  [9 <./yhteistoiminnallinen-eps-converted-to.pdf>]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 258.
-
+(babel)             in language  on input line 262.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 265.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 265.
+ [10]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 266.
+               Default added (so using `tbp') on input line 270.
 
 Package epstopdf Info: Source file: <knnkumpikin.eps>
 (epstopdf)                    date: 2015-11-25 22:39:49
@@ -1084,36 +1093,36 @@ Package epstopdf Info: Source file: <knnkumpikin.eps>
 (epstopdf)                    size: 22600 bytes
 (epstopdf)             Command: <repstopdf --outfile=knnkumpikin-eps-converted-
 to.pdf knnkumpikin.eps>
-(epstopdf)             \includegraphics on input line 267.
+(epstopdf)             \includegraphics on input line 271.
 Package epstopdf Info: Output file is already uptodate.
-<knnkumpikin-eps-converted-to.pdf, id=176, 1573.88pt x 577.15625pt>
+<knnkumpikin-eps-converted-to.pdf, id=183, 1573.88pt x 577.15625pt>
 File: knnkumpikin-eps-converted-to.pdf Graphic file (type pdf)
 
 <use knnkumpikin-eps-converted-to.pdf>
-Package pdftex.def Info: knnkumpikin-eps-converted-to.pdf used on input line 26
-7.
+Package pdftex.def Info: knnkumpikin-eps-converted-to.pdf used on input line 27
+1.
 (pdftex.def)             Requested size: 370.0pt x 135.67577pt.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 274.
+(babel)             in language  on input line 278.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 274.
- [10]
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 283.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 283.
+(babel)             in language  on input line 278.
  [11 <./knnkumpikin-eps-converted-to.pdf>]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 293.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 293.
  [12]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 305.
+(babel)             in language  on input line 306.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 306.
+ [13]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 309.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 307.
+               Default added (so using `tbp') on input line 311.
 
 Package epstopdf Info: Source file: <googlenews.eps>
 (epstopdf)                    date: 2015-11-26 12:09:06
@@ -1123,79 +1132,84 @@ Package epstopdf Info: Source file: <googlenews.eps>
 (epstopdf)                    size: 445888 bytes
 (epstopdf)             Command: <repstopdf --outfile=googlenews-eps-converted-t
 o.pdf googlenews.eps>
-(epstopdf)             \includegraphics on input line 308.
+(epstopdf)             \includegraphics on input line 312.
 Package epstopdf Info: Output file is already uptodate.
-<googlenews-eps-converted-to.pdf, id=206, 1366.10374pt x 810.02625pt>
+<googlenews-eps-converted-to.pdf, id=212, 1366.10374pt x 810.02625pt>
 File: googlenews-eps-converted-to.pdf Graphic file (type pdf)
 
 <use googlenews-eps-converted-to.pdf>
-Package pdftex.def Info: googlenews-eps-converted-to.pdf used on input line 308
+Package pdftex.def Info: googlenews-eps-converted-to.pdf used on input line 312
 .
 (pdftex.def)             Requested size: 390.0pt x 231.24303pt.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 314.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 314.
- [13]
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 317.
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 317.
  [14 <./googlenews-eps-converted-to.pdf>]
-Overfull \hbox (1.39299pt too wide) in paragraph at lines 322--323
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 325.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 325.
+
+[15]
+Overfull \hbox (1.39299pt too wide) in paragraph at lines 326--327
 []\T1/lmr/m/n/12 (-20) Google aset-taa tark-ko-ja vaa-ti-muk-sia pal-ve-lui-den
 -sa vas-tea-joil-le myös Google
  []
 
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 329.
+(babel)             in language  on input line 339.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 329.
-[15]
-Overfull \hbox (4.44785pt too wide) in paragraph at lines 336--337
+(babel)             in language  on input line 339.
+[16]
+Overfull \hbox (4.44785pt too wide) in paragraph at lines 340--341
 []\T1/lmr/m/n/12 (-20) Ongelman rat-kai-su-na käy-te-tään tii-vis-tei-den muo-d
 os-ta-mis-ta LSH-tekniikalla
  []
 
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 341.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 341.
-[16]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 346.
+               Default added (so using `tbp') on input line 350.
 
-Package epstopdf Info: Source file: <verkko.eps>
-(epstopdf)                    date: 2015-12-09 14:23:55
-(epstopdf)                    size: 183250 bytes
-(epstopdf)             Output file: <verkko-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-12-09 14:27:13
-(epstopdf)                    size: 63278 bytes
-(epstopdf)             Command: <repstopdf --outfile=verkko-eps-converted-to.pd
-f verkko.eps>
-(epstopdf)             \includegraphics on input line 347.
+Package epstopdf Info: Source file: <verkkouusitaas.eps>
+(epstopdf)                    date: 2015-12-12 18:09:36
+(epstopdf)                    size: 633181 bytes
+(epstopdf)             Output file: <verkkouusitaas-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-12-12 18:09:53
+(epstopdf)                    size: 96133 bytes
+(epstopdf)             Command: <repstopdf --outfile=verkkouusitaas-eps-convert
+ed-to.pdf verkkouusitaas.eps>
+(epstopdf)             \includegraphics on input line 351.
 Package epstopdf Info: Output file is already uptodate.
-<verkko-eps-converted-to.pdf, id=232, 923.45pt x 468.75125pt>
-File: verkko-eps-converted-to.pdf Graphic file (type pdf)
+<verkkouusitaas-eps-converted-to.pdf, id=234, 771.88374pt x 480.79625pt>
+File: verkkouusitaas-eps-converted-to.pdf Graphic file (type pdf)
 
-<use verkko-eps-converted-to.pdf>
-Package pdftex.def Info: verkko-eps-converted-to.pdf used on input line 347.
-(pdftex.def)             Requested size: 390.0pt x 197.96852pt.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 355.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 355.
- [17 <./verkko-eps-converted-to.pdf>]
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 356.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 362.
+<use verkkouusitaas-eps-converted-to.pdf>
+Package pdftex.def Info: verkkouusitaas-eps-converted-to.pdf used on input line
+ 351.
+(pdftex.def)             Requested size: 400.0pt x 249.1498pt.
 
-(./suosittelujarjestelmat.bbl
+Overfull \hbox (10.0pt too wide) in paragraph at lines 351--351
+[][] 
+ []
+
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 359.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 359.
+[17]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 360.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 363.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 363.
+ [18 <./verkkouusitaas-eps-converted-to.pdf>]
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 369.
+ (./suosittelujarjestelmat.bbl
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 1.
-
 babelbib: Using the BibTeX style's default font for `name'.
 babelbib: Using the BibTeX style's default font for `lastname'.
 babelbib: Using the BibTeX style's default font for `title'.
@@ -1208,31 +1222,36 @@ babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 26.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 35.
-[18])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 395.
+(babel)             in language  on input line 26.
+[19]
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 395.
+(babel)             in language  on input line 102.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 395.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 395.
+(babel)             in language  on input line 102.
+ [20])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 406.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 406.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
  (./suosittelujarjestelmat.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 395.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 395.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
 Package rerunfilecheck Info: File `suosittelujarjestelmat.out' has not changed.
 
 (rerunfilecheck)             Checksum: 2B2A16E82D31C2A87E551FC13B240C3F;793.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 395.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
- 10032 strings out of 494389
- 149544 string characters out of 6164621
- 281095 words of memory out of 5000000
+ 10028 strings out of 494389
+ 149538 string characters out of 6164621
+ 282310 words of memory out of 5000000
  12914 multiletter control sequences out of 15000+600000
- 55105 words of font info for 113 fonts, out of 8000000 for 9000
+ 54856 words of font info for 110 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
  32i,8n,35p,1051b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
@@ -1247,10 +1266,10 @@ ts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb>
 re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmsy8.pfb>
-Output written on suosittelujarjestelmat.pdf (22 pages, 944451 bytes).
+Output written on suosittelujarjestelmat.pdf (24 pages, 980308 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
- 262 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
+ 327 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  14460 words of extra memory for PDF output out of 17280 (max. 10000000)
 
