@@ -1,3 +1,6 @@
+Johannan Kandi
+======================
+
 tktltiki2 LaTeX class
 ======================
 
